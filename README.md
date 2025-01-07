@@ -1,3 +1,3 @@
-# Raza Rabbani's Porfolio Website
+# Raza Rabbani's Porfolio
 
 Built with Next.js
