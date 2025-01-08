@@ -26,7 +26,7 @@ export default function CNCFlatPackChairPage() {
       <main className="flex-grow">
         <div className="relative h-[50vh] mb-8">
           <Image
-            src="/placeholder.svg?height=800&width=1600"
+            src="/photos/fullchair.jpg"
             alt="CNC Flat Pack Chair"
             fill
             className="object-cover"
@@ -72,32 +72,32 @@ export default function CNCFlatPackChairPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {[
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/concepts.png",
                       alt: "Initial Design Concepts",
                       description: "Initial hand-drawn design concepts for idea generation"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/cardboard.jpg",
                       alt: "Cardboard Prototype",
                       description: "Handcut cardboard prototype based on my favorite design"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/chaircad.jpg",
                       alt: "Fusion360 Model",
                       description: "Full chair designed and modeled in Fusion360 based on my personal dimensions"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/lasercut.jpg",
                       alt: "Laser Cut Models",
                       description: "Laser cut cardboard models used to test scale, visual appeal, and structural integrity"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/frame.jpg",
                       alt: "CNC Machined Frame",
                       description: "CNC machined frame of the chair to confirm pocket joint fit"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/chairsit.JPG",
                       alt: "Final Chair in Use",
                       description: "Final chair in use!"
                     }

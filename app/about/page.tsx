@@ -15,7 +15,7 @@ export default function AboutPage() {
               <div className="space-y-4">
                 <div className="relative w-full aspect-square rounded-lg overflow-hidden">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Headshot%20from%20Razarabbani%20via%20Gmail-mfxmzWJyLwnZNWzWnmqHoVdpspIv2e.png"
+                    src="/photos/headshot.png"
                     alt="Raza Rabbani"
                     layout="fill"
                     objectFit="cover"
@@ -44,6 +44,7 @@ export default function AboutPage() {
                   </p>
                   <p>
                     Feel free to explore my portfolio to see some of the projects I've worked on, and don't hesitate to reach out if you'd like to discuss potential collaborations or just geek out about the future of engineering!
+                    
                   </p>
                 </div>
               </div>

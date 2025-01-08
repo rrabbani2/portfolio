@@ -26,7 +26,7 @@ export default function AutomatedChickenCoopPage() {
       <main className="flex-grow">
         <div className="relative h-[50vh] mb-8">
           <Image
-            src="/placeholder.svg?height=800&width=1600"
+            src="/photos/fullcoop.jpg"
             alt="Automated Chicken Coop"
             fill
             className="object-cover"
@@ -44,7 +44,7 @@ export default function AutomatedChickenCoopPage() {
                 <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
                 <dl className="space-y-2 text-sm">
                   <div>
-                    <dt className="font-bold text-gray-700">Design: <span className="font-normal text-gray-800">TinkerCAD, Foundation planning</span></dt>
+                    <dt className="font-bold text-gray-700">Design: <span className="font-normal text-gray-800">TinkerCAD, Physical foundation planning</span></dt>
                   </div>
                   <div>
                     <dt className="font-bold text-gray-700">Hardware: <span className="font-normal text-gray-800">Linear actuated gate, Live Wyze cameras</span></dt>
@@ -72,32 +72,32 @@ export default function AutomatedChickenCoopPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {[
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/cad.jpg",
                       alt: "TinkerCAD Model",
                       description: "TinkerCAD was used to model the frame and provide an estimate for the amount of material needed for the project"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/cutting.png",
                       alt: "Frame Construction",
                       description: "The frame of the coop was made out of pressure treated outdoor 2x4s, which were each precisely measured and cut using a handheld circular saw"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/cadframe.jpg",
                       alt: "Finalized Frame",
                       description: "Finalized frame compared to the CAD model, which served to be extremely accurate and allowed for minimal waste"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/gravityfeeder.JPG",
                       alt: "Feeding Tube",
                       description: "Feeding tube designed to use gravity for automatic trough replenishment. Exterior access allows for easy refilling without needing to enter the enclosure"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/chickens.JPG",
                       alt: "Completed Chicken Coop",
                       description: "A secure and spacious new home for the chickens with room to roam, perch, and explore!"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/eggs.jpg",
                       alt: "Fresh Eggs",
                       description: "Collecting nearly 12 eggs daily, we began selling to neighbors and sharing fresh, organic eggs as gifts"
                     }

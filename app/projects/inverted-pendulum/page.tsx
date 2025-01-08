@@ -26,7 +26,7 @@ export default function InvertedPendulumPage() {
       <main className="flex-grow">
         <div className="relative h-[50vh] mb-8">
           <Image
-            src="/placeholder.svg?height=800&width=1600"
+            src="/photos/fulltitle.png"
             alt="Inverted Pendulum"
             fill
             className="object-cover"
@@ -69,32 +69,32 @@ export default function InvertedPendulumPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {[
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/rotation.png",
                       alt: "Inverted Pendulum Setup",
                       description: "Using matrix transformations and frame rotations, we are able to track the pendulum's tip relative to the base"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/lagrangian.png",
                       alt: "Control System Interface",
                       description: "By applying Lagrangian dynamics (L = T - V), to the Euler-Lagrange equations of motion, we can simulate motion of the pendulum, and predict its response to specific inputs"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/envelope.png",
                       alt: "Work Envelope Visualization",
                       description: "The work envelope represents all possible points the system can reach. This was plotted in MATLAB using Plot 3. Because the system has only 2 degrees-of-freedom, the work envelope is a surface area"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/hamiltonian.png",
                       alt: "Hamiltonian Approach Visualization",
                       description: "The Hamiltonian approach is used to calculate the physical parameters of the system by analyzing the input torque, mechanical power, and energy losses"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/statespace.png",
                       alt: "State Selector Diagram",
                       description: "The state selector uses a MATLAB logic function combined with a Simulink multiport switch to transition the system between swing-up and balancing, based on its position"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/system.png",
                       alt: "Overall Control System in Simulink",
                       description: "Here is the overall control system, modeled using Simulink. It combines the state selector, a PID loop for automatic swing-up, and the balancing functionality which uses an error function to drive the system parameters to 0"
                     }

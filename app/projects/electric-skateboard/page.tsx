@@ -26,7 +26,7 @@ export default function ElectricSkateboardPage() {
       <main className="flex-grow">
         <div className="relative h-[50vh] mb-8">
           <Image
-            src="/placeholder.svg?height=800&width=1600"
+            src="/photos/fullboard.jpg"
             alt="Electric Skateboard"
             fill
             className="object-cover"
@@ -69,22 +69,22 @@ export default function ElectricSkateboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {[
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/fullsystem.png",
                       alt: "Electric Skateboard Component Layout",
                       description: "Rough component layout to assist in ordering and assembly"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/assembly.jpg",
                       alt: "Battery Assembly and ESC Configuration",
                       description: "Initial assembly of batteries soldered in series with XT90 connectors. Flashed desired firmware onto ESC to properly tune the motor"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/testing.png",
                       alt: "Wireless Test Run",
                       description: "First wireless test runs before installing electronics into below-deck housing"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/ride.jpg",
                       alt: "First Successful Ride",
                       description: "First successful ride at 20mph!"
                     }

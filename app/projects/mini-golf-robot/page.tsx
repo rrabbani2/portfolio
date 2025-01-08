@@ -26,7 +26,7 @@ export default function MiniGolfRobotPage() {
       <main className="flex-grow">
         <div className="relative h-[50vh] mb-8">
           <Image
-            src="/placeholder.svg?height=800&width=1600"
+            src="/photos/fullcad.png"
             alt="Mini-Golf Robot"
             fill
             className="object-cover"
@@ -47,13 +47,10 @@ export default function MiniGolfRobotPage() {
                     <dt className="font-bold text-gray-700">CAD Tools: <span className="font-normal text-gray-800">SOLIDWORKS simulation, FEA impact analysis</span></dt>
                   </div>
                   <div>
-                    <dt className="font-bold text-gray-700">Hardware: <span className="font-normal text-gray-800">Servo-driven chipping and putting mechanism, Continuous track wheels, Brushless DC motor </span></dt>
+                    <dt className="font-bold text-gray-700">Hardware: <span className="font-normal text-gray-800">Servo-driven chipping and putting mechanism, Brushless DC motor driven continuous track wheels </span></dt>
                   </div>
                   <div>
-                    <dt className="font-bold text-gray-700">AI framework: <span className="font-normal text-gray-800">TensorFlow</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Accuracy: <span className="font-normal text-gray-800">±5mm</span></dt>
+                    <dt className="font-bold text-gray-700">Materials: <span className="font-normal text-gray-800">Lightweight oakwood frame, 1060 Alumnimum clubhead, ..alloy shaft </span></dt>
                   </div>
                 </dl>
               </div>
@@ -72,22 +69,22 @@ export default function MiniGolfRobotPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {[
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/morphchart.png",
                       alt: "Morphological Chart",
                       description: "Morphological chart used to generate concepts for different types of striking mechanisms"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/exploded.png",
                       alt: "Overall Robot Model",
                       description: "Overall robot modeled using Solidworks and optimized for strength and stability at low mass"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/climbing.png",
                       alt: "Maximum Climb Angle Determination",
                       description: "Determination of the robot's maximum climb angle based on positioning its center of mass over the desired fulcrum"
                     },
                     {
-                      src: "/placeholder.svg?height=600&width=800",
+                      src: "/photos/chipping.png",
                       alt: "Chipping Dynamics Simulation",
                       description: "Solidworks simulation of the chipping dynamics, enabling launch angle and velocity calculations"
                     }

@@ -6,31 +6,31 @@ const projects = [
     id: 'inverted-pendulum',
     title: 'Inverted Pendulum',
     description: 'Self balancing inverted pendulum equipped with automated swing-up, and self righting functionality. Controlled via MATLAB scripts and Simulink circuits.',
-    image: '/placeholder.svg?height=400&width=600'
+    image: '/photos/cover.jpeg'
   },
   {
     id: 'mini-golf-robot',
     title: 'Mini-Golf Robot',
     description: 'Mini-Golf robot concept designed in Solidworks with a servo driven chipping and putting mechanism and the ability to climb over walls.',
-    image: '/placeholder.svg?height=400&width=600'
+    image: '/photos/fullcad.png'
   },
   {
     id: 'automated-chicken-coop',
     title: 'Automated Chicken Coop',
     description: 'Home for 12 chickens fitted with automated gravity feeders, industrial-grade water nozzles and a linearly actuated wifi-enabled gate.',
-    image: '/placeholder.svg?height=400&width=600'
+    image: '/photos/fullcoop.jpg'
   },
   {
     id: 'cnc-flat-pack-chair',
     title: 'CNC Flat Pack Chair',
     description: 'CNC machined from a single sheet plywood, this chair was custom designed to fit my body and is held together by friction alone.',
-    image: '/placeholder.svg?height=400&width=600'
+    image: '/photos/fullchair.jpg'
   },
   {
     id: 'electric-skateboard',
     title: 'Electric Skateboard',
     description: 'Remote controlled with a top speed of 20mph, powered by 4 series batteries and equipped with an interchangeable gear mount.',
-    image: '/placeholder.svg?height=400&width=600'
+    image: '/photos/fullboard.jpg'
   }
 ];
 

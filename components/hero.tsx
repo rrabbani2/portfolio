@@ -8,7 +8,7 @@ export function Hero() {
       <div className="relative z-10 flex flex-col items-center space-y-8">
         <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Headshot%20from%20Razarabbani%20via%20Gmail-mfxmzWJyLwnZNWzWnmqHoVdpspIv2e.png"
+            src="/photos/headshot.png"
             alt="Raza Rabbani"
             fill
             className="object-cover"
