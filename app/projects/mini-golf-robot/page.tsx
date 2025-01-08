@@ -24,39 +24,45 @@ export default function MiniGolfRobotPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <div className="relative h-[50vh] mb-8">
-          <Image
-            src="/photos/fullcad.png"
-            alt="Mini-Golf Robot"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end">
-            <div className="container mx-auto px-4 py-8">
-              <h1 className="text-4xl font-light tracking-tight text-white mb-2">Mini-Golf Robot</h1>
-            </div>
-          </div>
-        </div>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              <div className="blue-gradient-box mb-8">
-                <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
-                <dl className="space-y-2 text-sm">
-                  <div>
-                    <dt className="font-bold text-gray-700">CAD Tools: <span className="font-normal text-gray-800">SOLIDWORKS simulation, FEA impact analysis</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Hardware: <span className="font-normal text-gray-800">Servo-driven chipping and putting mechanism, Brushless DC motor driven continuous track wheels </span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Materials: <span className="font-normal text-gray-800">Lightweight oakwood frame, 1060 Alumnimum clubhead, ..alloy shaft </span></dt>
-                  </div>
-                </dl>
+            <div className="grid md:grid-cols-2 gap-12 mb-8 pt-12">
+              {/* Left side - Image */}
+              <div>
+                <div className="relative aspect-[4/4] rounded-xl overflow-hidden">
+                  <Image
+                    src="/photos/exploded.png"
+                    alt="Mini-Golf Robot"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: '40% 30%' }}
+                  />
+                </div>
               </div>
 
+              {/* Right side - Title and Specs */}
+              <div>
+                <h1 className="text-4xl font-light tracking-tight text-gray-800 mb-6">Mini-Golf Robot</h1>
+                <div className="blue-gradient-box">
+                  <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
+                  <dl className="space-y-2 text-sm">
+                    <div>
+                      <dt className="font-bold text-gray-700">CAD Tools: <span className="font-normal text-gray-800">SOLIDWORKS simulation, FEA impact analysis</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Hardware: <span className="font-normal text-gray-800">Servo-driven chipping and putting mechanism, Brushless DC motor driven continuous track wheels </span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Materials: <span className="font-normal text-gray-800">Lightweight oakwood frame, 1060 Alumnimum alloy clubhead, Hexcel AS4C carbon fiber shaft </span></dt>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
               <div className="prose max-w-none">
-                <p>
+                <p className="mb-6">
                   Following the ASME design challenge guidelines, this golf robot was designed to climb over obstacles and shoot golf balls. Using Solidworks, the robot was optimized for strength, stability, and low mass. Simulations were conducted within Solidworks to analyze chipping dynamics, including launch angles and velocity. Key design decisions were informed by a morphological chart and mechanical analyses.
                 </p>
                 <p>
@@ -71,17 +77,20 @@ export default function MiniGolfRobotPage() {
                     {
                       src: "/photos/morphchart.png",
                       alt: "Morphological Chart",
-                      description: "Morphological chart used to generate concepts for different types of striking mechanisms"
+                      description: "Morphological chart used to generate concepts for different types of striking mechanisms",
+                      style: { objectPosition: '0% 50%' }
                     },
                     {
-                      src: "/photos/exploded.png",
+                      src: "/photos/fullcad.png",
                       alt: "Overall Robot Model",
-                      description: "Overall robot modeled using Solidworks and optimized for strength and stability at low mass"
+                      description: "Full overview of the robot, modeled using Solidworks and optimized for strength and stability at low mass",
+                      style: { objectPosition: '50% 10%' }
                     },
                     {
                       src: "/photos/climbing.png",
                       alt: "Maximum Climb Angle Determination",
-                      description: "Determination of the robot's maximum climb angle based on positioning its center of mass over the desired fulcrum"
+                      description: "Determination of the robot's maximum climb angle based on positioning its center of mass over the desired fulcrum",
+                      style: { objectPosition: '50% 15%' }
                     },
                     {
                       src: "/photos/chipping.png",
@@ -91,7 +100,7 @@ export default function MiniGolfRobotPage() {
                   ].map((image, index) => (
                     <div key={index} className="space-y-4">
                       <div 
-                        className="relative aspect-[16/9] overflow-hidden rounded-lg cursor-pointer"
+                        className="relative aspect-[16/9] overflow-hidden rounded-xl cursor-pointer"
                         onClick={() => openModal(image.src, image.alt)}
                       >
                         <Image
@@ -99,6 +108,7 @@ export default function MiniGolfRobotPage() {
                           alt={image.alt}
                           fill
                           className="object-cover"
+                          style={image.style}
                         />
                       </div>
                       <p className="text-sm text-gray-600">{image.description}</p>

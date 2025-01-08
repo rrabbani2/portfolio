@@ -24,44 +24,68 @@ export default function InvertedPendulumPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <div className="relative h-[50vh] mb-8">
-          <Image
-            src="/photos/fulltitle.png"
-            alt="Inverted Pendulum"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end">
-            <div className="container mx-auto px-4 py-8">
-              <h1 className="text-4xl font-light tracking-tight text-white mb-2">Inverted Pendulum</h1>
-            </div>
-          </div>
-        </div>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              <div className="blue-gradient-box mb-8">
-                <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
-                <dl className="space-y-2 text-sm">
-                  <div>
-                    <dt className="font-bold text-gray-700">Hardware: <span className="font-normal text-gray-800">Geared rotary motor, Incremental encoders, Weighted pendulum arm</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Software: <span className="font-normal text-gray-800">MATLAB, Simulink</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Control System Elements: <span className="font-normal text-gray-800">State selector, PID loop, Jacobian balance function</span></dt>
-                  </div>
-                </dl>
+            <div className="grid md:grid-cols-2 gap-12 mb-8 pt-12">
+              {/* Left side - Image */}
+              <div>
+                <div className="relative aspect-[4/4] rounded-xl overflow-hidden">
+                  <Image
+                    src="/photos/fulltitle.png"
+                    alt="Inverted Pendulum"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: '50% 30%', objectFit: 'scale-down', transform: 'scale(1.4)' }}
+                  />
+                </div>
               </div>
 
+              {/* Right side - Title and Specs */}
+              <div>
+                <h1 className="text-4xl font-light tracking-tight text-gray-800 mb-6">Inverted Pendulum</h1>
+                <div className="blue-gradient-box">
+                  <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
+                  <dl className="space-y-2 text-sm">
+                    <div>
+                      <dt className="font-bold text-gray-700">Hardware: <span className="font-normal text-gray-800">Geared rotary motor, Incremental encoders, Weighted pendulum arm</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Software: <span className="font-normal text-gray-800">MATLAB, Simulink</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Control System Elements: <span className="font-normal text-gray-800">State selector, PID loop, Jacobian balance function</span></dt>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
               <div className="prose max-w-none">
-                <p>
+                <p className="mb-6">
                   For this project, I developed a control system for an inverted pendulum that self-balances and can recover when disturbed. Using MATLAB and Simulink, I combined Lagrangian and Hamiltonian dynamics to model motion and calculate system parameters, and Jacobian transformations to track positions. A state selector and PID loops enable seamless transitions between swing-up and balancing, ensuring precise and adaptive control.
                 </p>
                 <p>
                   This project not only showcases the practical application of control theory but also serves as a foundation for more complex balancing systems in robotics, such as self-balancing rockets and stabilization mechanisms in drones.
                 </p>
+              </div>
+
+              <div className="mt-8">
+                <h2 className="text-2xl font-light tracking-tight mb-6">Demo Video</h2>
+                <div className="max-w-[300px]">
+                  <div className="relative aspect-[9/16] overflow-hidden">
+                    <video 
+                      className="w-full rounded-xl"
+                      controls
+                      autoPlay
+                      muted
+                      loop
+                    >
+                      <source src="/photos/demo.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
               </div>
 
               <div className="space-y-8">
@@ -101,7 +125,7 @@ export default function InvertedPendulumPage() {
                   ].map((image, index) => (
                     <div key={index} className="space-y-4">
                       <div 
-                        className="relative aspect-[16/9] overflow-hidden rounded-lg cursor-pointer"
+                        className="relative aspect-[16/9] overflow-hidden rounded-xl cursor-pointer"
                         onClick={() => openModal(image.src, image.alt)}
                       >
                         <Image

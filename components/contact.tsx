@@ -24,10 +24,10 @@ const contactMethods = [
 
 export function Contact() {
   return (
-    <section id="contact" className="py-12 bg-white">
-      <div className="max-w-[1400px] mx-auto px-12">
+    <section className="py-12">
+      <div className="max-w-[1400px] mx-auto px-4">
         <h2 className="text-[32px] font-light mb-12 gradient-text">
-          Contact
+          Let's Connect
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {contactMethods.map((method) => (
@@ -36,7 +36,7 @@ export function Contact() {
               href={method.href}
               className="group block transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
             >
-              <div className="rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 h-full flex flex-col items-center justify-center py-8 px-4 bg-white group-hover:bg-gradient-to-br group-hover:from-[#eff6ff] group-hover:to-[#cffafe]">
+              <div className="rounded-xl border border-gray-200 overflow-hidden transition-all duration-300 h-full flex flex-col items-center justify-center py-8 px-4 bg-white group-hover:bg-gradient-to-br group-hover:from-[#eff6ff] group-hover:to-[#cffafe]">
                 <method.icon className="w-8 h-8 mb-4 stroke-1 text-blue-500 transition-colors duration-300" />
                 <h3 className="text-[22px] font-light mb-2 text-gray-800">{method.title}</h3>
                 <p className="text-gray-600 font-light text-center">{method.content}</p>

@@ -24,7 +24,7 @@ const projects = [
     id: 'cnc-flat-pack-chair',
     title: 'CNC Flat Pack Chair',
     description: 'CNC machined from a single sheet plywood, this chair was custom designed to fit my body and is held together by friction alone.',
-    image: '/photos/fullchair.jpg'
+    image: '/photos/fullfullchair.jpg'
   },
   {
     id: 'electric-skateboard',
@@ -39,16 +39,14 @@ export function FeaturedProjects() {
     <section className="py-12">
       <div className="max-w-[1400px] mx-auto px-12">
         <h2 className="text-[32px] font-light mb-12 gradient-text">
-          Featured Projects
+          Projects at a Glance
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <Link 
               key={project.id}
               href={`/projects/${project.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block transition-all duration-300 rounded-lg overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1"
+              className="group block transition-all duration-300 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1"
             >
               <div className="h-full flex flex-col bg-white transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-[#eff6ff] group-hover:to-[#cffafe]">
                 <div className="relative aspect-[3/2] bg-gray-100 flex items-center justify-center overflow-hidden">
@@ -57,6 +55,18 @@ export function FeaturedProjects() {
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    style={{ 
+                      objectPosition: project.id === 'inverted-pendulum' ? '50% 30%' : 
+                                    project.id === 'mini-golf-robot' ? '50% 30%' :
+                                    project.id === 'electric-skateboard' ? 'center center' :
+                                    '50% 50%',
+                      objectFit: project.id === 'electric-skateboard' ? 'contain' : 
+                                project.id === 'cnc-flat-pack-chair' ? 'contain' :
+                                'cover',
+                      transform: project.id === 'electric-skateboard' ? 'scale(1.7) rotate(270deg)' : 
+                                project.id === 'cnc-flat-pack-chair' ? 'scale(1.5)' :
+                                'none'
+                    }}
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">

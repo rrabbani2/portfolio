@@ -24,42 +24,48 @@ export default function AutomatedChickenCoopPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <div className="relative h-[50vh] mb-8">
-          <Image
-            src="/photos/fullcoop.jpg"
-            alt="Automated Chicken Coop"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end">
-            <div className="container mx-auto px-4 py-8">
-              <h1 className="text-4xl font-light tracking-tight text-white mb-2">Automated Chicken Coop</h1>
-            </div>
-          </div>
-        </div>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              <div className="blue-gradient-box mb-8">
-                <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
-                <dl className="space-y-2 text-sm">
-                  <div>
-                    <dt className="font-bold text-gray-700">Design: <span className="font-normal text-gray-800">TinkerCAD, Physical foundation planning</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Hardware: <span className="font-normal text-gray-800">Linear actuated gate, Live Wyze cameras</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Feeding: <span className="font-normal text-gray-800">20kg gravity-feeders, Industrial-grade water nozzles</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Connectivity: <span className="font-normal text-gray-800">Wi-Fi enabled, Google integration, App and voice control</span></dt>
-                  </div>
-                </dl>
+            {/* Grid container for top section */}
+            <div className="grid md:grid-cols-2 gap-12 mb-8 pt-12">
+              {/* Left side - Image */}
+              <div>
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  <Image
+                    src="/photos/fullcoop.jpg"
+                    alt="Automated Chicken Coop"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
 
+              {/* Right side - Title and Specs */}
+              <div>
+                <h1 className="text-4xl font-light tracking-tight text-gray-800 mb-6">Automated Chicken Coop</h1>
+                <div className="blue-gradient-box">
+                  <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
+                  <dl className="space-y-2 text-sm">
+                    <div>
+                      <dt className="font-bold text-gray-700">Design: <span className="font-normal text-gray-800">TinkerCAD, Physical foundation planning</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Hardware: <span className="font-normal text-gray-800">Linear actuated gate, Live Wyze cameras</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Feeding: <span className="font-normal text-gray-800">20kg gravity-feeders, Industrial-grade water nozzles</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Connectivity: <span className="font-normal text-gray-800">Wi-Fi enabled, Google integration, App and voice control</span></dt>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
               <div className="prose max-w-none">
-                <p>
+                <p className="mb-6">
                   This chicken coop is a smart agricultural solution that combines IoT technology with sustainable design to improve poultry management. This system automates various aspects of chicken care, ensuring optimal living conditions while reducing human labor and resource consumption.
                 </p>
                 <p>
@@ -104,7 +110,7 @@ export default function AutomatedChickenCoopPage() {
                   ].map((image, index) => (
                     <div key={index} className="space-y-4">
                       <div 
-                        className="relative aspect-[16/9] overflow-hidden rounded-lg cursor-pointer"
+                        className="relative aspect-[16/9] overflow-hidden rounded-xl cursor-pointer"
                         onClick={() => openModal(image.src, image.alt)}
                       >
                         <Image

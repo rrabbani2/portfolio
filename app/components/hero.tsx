@@ -1,0 +1,3 @@
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Welcome to my portfolio! I'm passionate about bringing innovative ideas to life through robotics and mechanical engineering. From self-balancing systems to automated solutions, my projects showcase the intersection of control theory, mechanical design, and practical problem-solving. Each project represents a unique challenge that pushed me to blend technical precision with creative engineering approaches. Thank you for taking the time to explore my work!
+              </p> 

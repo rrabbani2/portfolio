@@ -22,8 +22,8 @@ export function Header() {
   }, [])
 
   return (
-    <header className="w-full py-4 px-4 bg-white shadow-sm">
-      <nav className="container mx-auto flex justify-between items-center">
+    <header className="w-full py-4 px-2 bg-white shadow-sm">
+      <nav className="max-w-[1400px] mx-auto flex justify-between items-center px-4">
         <Link href="/" className="text-[18px] tracking-wide font-light gradient-text">
           RAZA RABBANI
         </Link>

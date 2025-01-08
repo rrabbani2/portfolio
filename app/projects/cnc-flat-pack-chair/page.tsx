@@ -24,42 +24,48 @@ export default function CNCFlatPackChairPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <div className="relative h-[50vh] mb-8">
-          <Image
-            src="/photos/fullchair.jpg"
-            alt="CNC Flat Pack Chair"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end">
-            <div className="container mx-auto px-4 py-8">
-              <h1 className="text-4xl font-light tracking-tight text-white mb-2">CNC Flat Pack Chair</h1>
-            </div>
-          </div>
-        </div>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              <div className="blue-gradient-box mb-8">
-                <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
-                <dl className="space-y-2 text-sm">
-                  <div>
-                    <dt className="font-bold text-gray-700">Material: <span className="font-normal text-gray-800">Sustainable Plywood</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Manufacturing: <span className="font-normal text-gray-800">CNC Routing</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Assembly time: <span className="font-normal text-gray-800">&lt; 10 minutes</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Weight capacity: <span className="font-normal text-gray-800">300 lbs</span></dt>
-                  </div>
-                </dl>
+            {/* Grid container for top section */}
+            <div className="grid md:grid-cols-2 gap-12 mb-8 pt-12">
+              {/* Left side - Image */}
+              <div>
+                <div className="relative aspect-[3/3] rounded-xl overflow-hidden">
+                  <Image
+                    src="/photos/fullchair.jpg"
+                    alt="CNC Flat Pack Chair"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
 
+              {/* Right side - Title and Specs */}
+              <div>
+                <h1 className="text-4xl font-light tracking-tight text-gray-800 mb-6">CNC Flat Pack Chair</h1>
+                <div className="blue-gradient-box">
+                  <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
+                  <dl className="space-y-2 text-sm">
+                    <div>
+                      <dt className="font-bold text-gray-700">Material: <span className="font-normal text-gray-800">Sustainable Plywood</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Manufacturing: <span className="font-normal text-gray-800">CNC Routing</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Assembly time: <span className="font-normal text-gray-800">&lt; 10 minutes</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Weight capacity: <span className="font-normal text-gray-800">300 lbs</span></dt>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
               <div className="prose max-w-none">
-                <p>
+                <p className="mb-6">
                   This CNC Flat Pack Chair is an innovative approach to furniture design that combines modern manufacturing techniques with sustainable materials and user-friendly assembly. The chair was designed in Fusion360 to fit my body, using personalized dimensions to provide ergonomic comfort. 
                 </p>
                 <p>
@@ -104,7 +110,7 @@ export default function CNCFlatPackChairPage() {
                   ].map((image, index) => (
                     <div key={index} className="space-y-4">
                       <div 
-                        className="relative aspect-[16/9] overflow-hidden rounded-lg cursor-pointer"
+                        className="relative aspect-[16/9] overflow-hidden rounded-xl cursor-pointer"
                         onClick={() => openModal(image.src, image.alt)}
                       >
                         <Image

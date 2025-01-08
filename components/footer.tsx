@@ -20,7 +20,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">
+              <a href="https://www.linkedin.com/in/raza-rabbani-74a13a192/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">
                 LinkedIn
               </a>
             </li>

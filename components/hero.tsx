@@ -18,9 +18,7 @@ export function Hero() {
           RAZA RABBANI
         </h1>
         <p className="max-w-[800px] mx-auto px-8 sm:px-16 md:px-24 lg:px-32 text-gray-700 text-[18px] leading-relaxed font-light -mt-2">
-          I am a dedicated mechanical engineer and robotics specialist, deeply committed
-          to the principles of innovative design. With extensive hands-on experience
-          in autonomous systems and smart.
+        Welcome to my portfolio! From self-balancing systems to high-tech farms, my projects showcase the intersection of control theory, mechanical design, and practical problem-solving. This collection features both personal projects and class assignments that pushed me to blend technical expertise with creative engineering approaches. Thank you for taking the time to explore my work!
         </p>
         <Link 
           href="/about"

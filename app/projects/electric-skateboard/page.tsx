@@ -24,40 +24,43 @@ export default function ElectricSkateboardPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <div className="relative h-[50vh] mb-8">
-          <Image
-            src="/photos/fullboard.jpg"
-            alt="Electric Skateboard"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end">
-            <div className="container mx-auto px-4 py-8">
-              <h1 className="text-4xl font-light tracking-tight text-white mb-2">Electric Skateboard</h1>
-            </div>
-          </div>
-        </div>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              <div className="blue-gradient-box mb-8">
-                <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
-                <dl className="space-y-2 text-sm">
-                  <div>
-                    <dt className="font-bold text-gray-700">Motor: <span className="font-normal text-gray-800">Single, Belt-driven</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Batteries: <span className="font-normal text-gray-800">4x 5000mAh 5S 30C Lipo</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Top speed: <span className="font-normal text-gray-800">20 mph</span></dt>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-700">Range: <span className="font-normal text-gray-800">15 miles</span></dt>
-                  </div>
-                </dl>
+            <div className="grid md:grid-cols-2 gap-12 mb-8 pt-12">
+              <div>
+                <div className="relative aspect-[3/4] rounded-xl overflow-hidden">
+                  <Image
+                    src="/photos/fullboard.jpg"
+                    alt="Electric Skateboard"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
 
+              <div>
+                <h1 className="text-4xl font-light tracking-tight text-gray-800 mb-6">Electric Skateboard</h1>
+                <div className="blue-gradient-box">
+                  <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
+                  <dl className="space-y-2 text-sm">
+                    <div>
+                      <dt className="font-bold text-gray-700">Motor: <span className="font-normal text-gray-800">Single, Belt-driven</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Batteries: <span className="font-normal text-gray-800">4x 5000mAh 5S 30C Lipo</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Top speed: <span className="font-normal text-gray-800">20 mph</span></dt>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-gray-700">Range: <span className="font-normal text-gray-800">15 miles</span></dt>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
               <div className="prose max-w-none">
                 <p>
                   This remote control electric skateboard was custom-built, featuring 4 batteries in series for more power. The project involved designing system architecture, hand-soldering batteries with XT90 connectors, flashing firmware onto the ESC for motor tuning, and conducting wireless test runs before integrating the electronics into the below-deck housing. The result was a powerful and fast electric skateboard that streamlined my commute to school, all for less than $300. 
@@ -91,7 +94,7 @@ export default function ElectricSkateboardPage() {
                   ].map((image, index) => (
                     <div key={index} className="space-y-4">
                       <div 
-                        className="relative aspect-[16/9] overflow-hidden rounded-lg cursor-pointer"
+                        className="relative aspect-[16/9] overflow-hidden rounded-xl cursor-pointer"
                         onClick={() => openModal(image.src, image.alt)}
                       >
                         <Image
