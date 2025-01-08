@@ -20,7 +20,7 @@ export function Hero() {
         <p className="max-w-[800px] mx-auto px-8 sm:px-16 md:px-24 lg:px-32 text-gray-700 text-[18px] leading-relaxed font-light -mt-2">
           I am a dedicated mechanical engineer and robotics specialist, deeply committed
           to the principles of innovative design. With extensive hands-on experience
-          in autonomous systems and smart manufacturing.
+          in autonomous systems and smart.
         </p>
         <Link 
           href="/about"
