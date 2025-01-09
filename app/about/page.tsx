@@ -9,16 +9,17 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12">
-        <h1 className="text-5xl font-light mb-8 gradient-text pb-2">My Story</h1>
+        <h1 className="text-5xl font-light mb-8 gradient-text pb-2">About Me</h1>
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <div className="relative w-full aspect-square rounded-xl overflow-hidden">
               <Image
                 src="/photos/headshot.png"
                 alt="Raza Rabbani"
-                layout="fill"
-                objectFit="cover"
-                className="transition-all duration-300 hover:scale-105"
+                layout="responsive"
+                width={500}
+                height={500}
+                className="object-cover w-[70%] h-auto"
               />
             </div>
           </div>
