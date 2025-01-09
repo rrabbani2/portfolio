@@ -84,7 +84,7 @@ export default function MiniGolfRobotPage() {
                       src: "/photos/fullcad.png",
                       alt: "Overall Robot Model",
                       description: "Full overview of the robot, modeled using Solidworks and optimized for strength and stability at low mass",
-                      style: { objectPosition: '50% 10%' }
+                      style: { objectPosition: '50% 1%' }
                     },
                     {
                       src: "/photos/climbing.png",

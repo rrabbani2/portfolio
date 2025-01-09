@@ -85,17 +85,20 @@ export default function CNCFlatPackChairPage() {
                     {
                       src: "/photos/cardboard.jpg",
                       alt: "Cardboard Prototype",
-                      description: "Handcut cardboard prototype based on my favorite design"
+                      description: "Handcut cardboard prototype based on my favorite design",
+                      style: { objectPosition: '50% 35%', transform: 'scale(1.2)' }
                     },
                     {
-                      src: "/photos/chaircad.jpg",
+                      src: "/photos/chairfullcad.jpg",
                       alt: "Fusion360 Model",
-                      description: "Full chair designed and modeled in Fusion360 based on my personal dimensions"
+                      description: "Full chair designed and modeled in Fusion360 based on my personal dimensions",
+                      style: {objectPosition: '50% 50%', transform: 'scale(1)' }
                     },
                     {
                       src: "/photos/lasercut.jpg",
                       alt: "Laser Cut Models",
-                      description: "Laser cut cardboard models used to test scale, visual appeal, and structural integrity"
+                      description: "Laser cut cardboard models used to test scale, visual appeal, and structural integrity",
+                      style: { objectPosition: '50% 20%', transform: 'scale(1)' }
                     },
                     {
                       src: "/photos/frame.jpg",
@@ -118,6 +121,7 @@ export default function CNCFlatPackChairPage() {
                           alt={image.alt}
                           fill
                           className="object-cover"
+                          style={image.style}
                         />
                       </div>
                       <p className="text-sm text-gray-600">{image.description}</p>

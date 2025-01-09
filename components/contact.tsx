@@ -25,8 +25,8 @@ const contactMethods = [
 export function Contact() {
   return (
     <section className="py-12">
-      <div className="max-w-[1400px] mx-auto px-4">
-        <h2 className="text-[32px] font-light mb-12 gradient-text">
+      <div className="max-w-[1400px] mx-auto px-12">
+        <h2 className="text-[32px] font-light mb-12 gradient-text pl-0">
           Let's Connect
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
