@@ -3,7 +3,8 @@ export const projectOrder = [
   'mini-golf-robot',
   'automated-chicken-coop',
   'cnc-flat-pack-chair',
-  'electric-skateboard'
+  'electric-skateboard',
+  'robot-vaccum-circuit'
 ];
 
 export function getNextAndPreviousProjects(currentProject: string) {

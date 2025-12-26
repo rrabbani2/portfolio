@@ -16,17 +16,19 @@ export default function AboutPage() {
               <Image
                 src="/photos/headshot.png"
                 alt="Raza Rabbani"
-                layout="responsive"
-                width={500}
-                height={500}
-                className="object-cover w-[70%] h-auto"
+                fill
+                className="object-cover"
+                style={{ 
+                  objectPosition: '50% 20%',
+                  transform: 'scale(1.2)'
+                }} 
               />
             </div>
           </div>
           <div className="space-y-6">
             <div className="space-y-6 text-xl font-light pb-6">
               <p>
-                Hi, my name is Raza. I am a junior at Washington University in St. Louis studying Mechanical Engineering and Robotics.
+                Hi, my name is Raza. I am a senior at Washington University in St. Louis studying Mechanical Engineering with minors in Robotics and Mechatronics.
               </p>
               <p>
                 In my free time, I enjoy reading sci-fi, cooking, and playing sports like golf, squash, ping pong and pickleball. I'm also an avid 3D printer, and am constantly looking to use my 3D printer to create simple solutions for improving my everyday life. 

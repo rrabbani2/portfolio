@@ -31,6 +31,12 @@ const projects = [
     title: 'Electric Skateboard',
     description: 'Remote controlled with a top speed of 20mph, powered by 4 series batteries and equipped with an interchangeable gear mount.',
     image: '/photos/fullboard.jpg'
+  },
+  {
+    id: 'robot-vaccum-circuit',
+    title: 'Robot Vaccum Circuit',
+    description: 'Arduino-based circuit integrating ultrasonic sensors, force detection, obstacle avoidance, and stepper motor control for autonomous cleaning applications.',
+    image: '/photos/circuittop.JPG'
   }
 ];
 
