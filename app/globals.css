@@ -51,13 +51,9 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/* Target Next.js Image component's img element in hero section - very specific selectors */
-.hero-avatar-container img[src*="headshot"],
-.hero-avatar-container img,
-.hero-avatar-container span img,
-.hero-avatar-container > div img,
-.hero-avatar-container > div > span img,
-.hero-avatar-container * img {
-  object-position: 0% 30% !important;
+.hero-avatar-image {
+  object-position: var(--avatar-x, 50%) var(--avatar-y, 50%);
+  transform: translate(var(--avatar-shift-x, 0%), var(--avatar-shift-y, 0%))
+    scale(var(--avatar-scale, 1));
+  transform-origin: center center;
 }
-

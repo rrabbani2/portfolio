@@ -1,21 +1,28 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import type { CSSProperties } from 'react'
 
 export function Hero() {
   return (
     <div className="py-8 pb-6 text-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-100 opacity-50 z-0"></div>
       <div className="relative z-10 flex flex-col items-center space-y-6">
-        <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg hero-avatar-container">
+        <div
+          className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg hero-avatar-container"
+          style={
+            {
+              "--avatar-x": "50%",
+              "--avatar-y": "30%",
+              "--avatar-shift-x": "3%", 
+              "--avatar-shift-y": "0%",
+              "--avatar-scale": "1.2",
+            } as CSSProperties
+          }
+        >
           <img
             src="/photos/headshot.png"
             alt="Raza Rabbani"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ 
-              objectPosition: '0% 20%',
-              transform: 'scale(1.2)',
-              transformOrigin: 'center center'
-            }}
+            className="hero-avatar-image absolute inset-0 w-full h-full object-cover"
           />
         </div>
         <h1 className="text-[40px] font-light tracking-[0.02em] leading-none gradient-text">
@@ -36,4 +43,3 @@ export function Hero() {
 }
 
 //final
-

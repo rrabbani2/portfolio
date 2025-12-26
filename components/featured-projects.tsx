@@ -33,6 +33,12 @@ const projects = [
     image: '/photos/fullboard.jpg'
   },
   {
+    id: 'trash-collection-robot',
+    title: 'Trash Collection Robot',
+    description: 'Autonomous trash collection robot with a servo-actuated arm, designed to navigate and sort objects in a structured test arena.',
+    image: '/photos/robotside.png'
+  },
+  {
     id: 'robot-vaccum-circuit',
     title: 'Robot Vaccum Circuit',
     description: 'Arduino-based circuit integrating ultrasonic sensors, force detection, obstacle avoidance, and stepper motor control for autonomous cleaning applications.',
@@ -69,9 +75,15 @@ export function FeaturedProjects() {
                       objectFit: project.id === 'electric-skateboard' ? 'contain' : 
                                 project.id === 'cnc-flat-pack-chair' ? 'contain' :
                                 'cover',
-                      transform: project.id === 'electric-skateboard' ? 'scale(1.7) rotate(270deg)' : 
-                                project.id === 'cnc-flat-pack-chair' ? 'scale(1.5)' :
-                                'none'
+                      transform:
+                          project.id === 'electric-skateboard'
+                                  ? 'scale(1.7) rotate(270deg)'
+                                  : project.id === 'cnc-flat-pack-chair'
+                                    ? 'scale(1.5)'
+                                    : project.id === 'trash-collection-robot'
+                                      ? 'scale(1)'
+                                      : 'none',
+                              
                     }}
                   />
                 </div>
@@ -91,4 +103,3 @@ export function FeaturedProjects() {
     </section>
   )
 }
-
