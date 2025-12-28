@@ -3,16 +3,28 @@ import Link from 'next/link'
 
 const projects = [
   {
+    id: 'trash-collection-robot',
+    title: 'Trash Collection Robot',
+    description: 'Autonomous trash collection robot with a servo-actuated arm, designed to navigate and sort objects in a structured test arena.',
+    image: '/photos/robotside.png'
+  },
+  {
     id: 'inverted-pendulum',
     title: 'Inverted Pendulum',
     description: 'Self balancing inverted pendulum equipped with automated swing-up, and self righting functionality. Controlled via MATLAB scripts and Simulink circuits.',
     image: '/photos/cover.jpeg'
   },
   {
-    id: 'mini-golf-robot',
-    title: 'Mini-Golf Robot',
-    description: 'Mini-Golf robot concept designed in Solidworks with a servo driven chipping and putting mechanism and the ability to climb over walls.',
-    image: '/photos/fullcad.png'
+    id: 'robot-vaccum-circuit',
+    title: 'Robot Vaccum Circuit',
+    description: 'Arduino-based circuit integrating ultrasonic sensors, force detection, obstacle avoidance, and stepper motor control for autonomous cleaning applications.',
+    image: '/photos/circuittop.JPG'
+  },
+  {
+    id: 'electric-skateboard',
+    title: 'Electric Skateboard',
+    description: 'Remote controlled with a top speed of 20mph, powered by 4 series batteries and equipped with an interchangeable gear mount.',
+    image: '/photos/fullboard.jpg'
   },
   {
     id: 'automated-chicken-coop',
@@ -27,22 +39,10 @@ const projects = [
     image: '/photos/fullfullchair.jpg'
   },
   {
-    id: 'electric-skateboard',
-    title: 'Electric Skateboard',
-    description: 'Remote controlled with a top speed of 20mph, powered by 4 series batteries and equipped with an interchangeable gear mount.',
-    image: '/photos/fullboard.jpg'
-  },
-  {
-    id: 'trash-collection-robot',
-    title: 'Trash Collection Robot',
-    description: 'Autonomous trash collection robot with a servo-actuated arm, designed to navigate and sort objects in a structured test arena.',
-    image: '/photos/robotside.png'
-  },
-  {
-    id: 'robot-vaccum-circuit',
-    title: 'Robot Vaccum Circuit',
-    description: 'Arduino-based circuit integrating ultrasonic sensors, force detection, obstacle avoidance, and stepper motor control for autonomous cleaning applications.',
-    image: '/photos/circuittop.JPG'
+    id: 'mini-golf-robot',
+    title: 'Mini-Golf Robot',
+    description: 'Mini-Golf robot concept designed in Solidworks with a servo driven chipping and putting mechanism and the ability to climb over walls.',
+    image: '/photos/fullcad.png'
   }
 ];
 

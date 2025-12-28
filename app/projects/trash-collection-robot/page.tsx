@@ -20,6 +20,7 @@ type GalleryItem =
   | {
       type: "video"
       src: string
+      embedUrl?: string
       title: string
       description: string
     }
@@ -33,7 +34,8 @@ type GalleryItem =
 const galleryItems: GalleryItem[] = [
   {
     type: "video",
-    src: "/photos/robotvideo.mp4",
+    src: "https://youtu.be/ywtiF0A0-AA",
+    embedUrl: "https://www.youtube.com/embed/ywtiF0A0-AA",
     title: "Trash Collection Robot Demo",
     description: "Autonomous run demonstrating collection and navigation behavior."
   },
@@ -179,11 +181,14 @@ export default function TrashCollectionRobotPage() {
                           />
                         </div>
                       ) : item.type === "video" ? (
-                        <div className="relative aspect-video overflow-hidden rounded-xl">
-                          <video className="w-full h-full rounded-xl" controls muted loop>
-                            <source src={item.src} type="video/mp4" />
-                            Your browser does not support the video tag.
-                          </video>
+                        <div className="relative aspect-video overflow-hidden rounded-xl bg-black">
+                          <iframe
+                            src={item.embedUrl || item.src}
+                            title={item.title}
+                            className="w-full h-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                          />
                         </div>
                       ) : (
                         <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-white">
