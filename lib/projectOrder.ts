@@ -1,4 +1,5 @@
 export const projectOrder = [
+  'fully-3d-printable-umi',
   'trash-collection-robot',
   'inverted-pendulum',
   'robot-vaccum-circuit',

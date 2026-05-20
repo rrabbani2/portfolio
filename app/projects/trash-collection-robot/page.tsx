@@ -20,7 +20,6 @@ type GalleryItem =
   | {
       type: "video"
       src: string
-      embedUrl?: string
       title: string
       description: string
     }
@@ -34,10 +33,9 @@ type GalleryItem =
 const galleryItems: GalleryItem[] = [
   {
     type: "video",
-    src: "https://youtu.be/ywtiF0A0-AA",
-    embedUrl: "https://www.youtube.com/embed/ywtiF0A0-AA",
+    src: "/photos/robotvideo.mp4",
     title: "Trash Collection Robot Demo",
-    description: "Autonomous run demonstrating collection and navigation behavior."
+    description: "Remote operated run demonstrating collection and navigation behavior."
   },
   {
     type: "image",
@@ -112,9 +110,9 @@ export default function TrashCollectionRobotPage() {
                   <dl className="space-y-2 text-sm">
                     <div>
                       <dt className="font-bold text-gray-700">
-                        Platform:{" "}
+                        Movement and Body:{" "}
                         <span className="font-normal text-gray-800">
-                          Mobile chassis with custom mounting stack
+                           4 TT motor driven mecanum wheels with rigid aluminum chassis and custom mounting stack
                         </span>
                       </dt>
                     </div>
@@ -122,7 +120,7 @@ export default function TrashCollectionRobotPage() {
                       <dt className="font-bold text-gray-700">
                         Actuation:{" "}
                         <span className="font-normal text-gray-800">
-                          Servo-driven arm and gripper
+                          4-DOF servo-driven arm + 2 finger gripper
                         </span>
                       </dt>
                     </div>
@@ -130,15 +128,15 @@ export default function TrashCollectionRobotPage() {
                       <dt className="font-bold text-gray-700">
                         Control:{" "}
                         <span className="font-normal text-gray-800">
-                          Embedded controller with autonomous task sequencing
+                          Wifi enabled arduino with custom web-based videogame style control interface
                         </span>
                       </dt>
                     </div>
                     <div>
                       <dt className="font-bold text-gray-700">
-                        Focus:{" "}
+                        Power:{" "}
                         <span className="font-normal text-gray-800">
-                          Collection, transport, and dump cycles in a mock arena
+                        Two 6v 800mAh NiMH rechargeable battery packs  
                         </span>
                       </dt>
                     </div>
@@ -150,8 +148,8 @@ export default function TrashCollectionRobotPage() {
             <div className="space-y-8">
               <div className="prose max-w-none">
                 <p className="mb-6">
-                  The Trash Collection Robot was built to autonomously identify,
-                  collect, and dump objects within a defined arena. The system pairs
+                  The Trash Collection Robot was built to
+                  collect and dump objects within a defined arena. The system pairs
                   a mobile base with a servo-actuated arm, enabling controlled pickup
                   and release actions while navigating to target locations.
                 </p>
@@ -181,14 +179,11 @@ export default function TrashCollectionRobotPage() {
                           />
                         </div>
                       ) : item.type === "video" ? (
-                        <div className="relative aspect-video overflow-hidden rounded-xl bg-black">
-                          <iframe
-                            src={item.embedUrl || item.src}
-                            title={item.title}
-                            className="w-full h-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                          />
+                        <div className="relative aspect-video overflow-hidden rounded-xl">
+                          <video className="w-full h-full rounded-xl" controls muted loop>
+                            <source src={item.src} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
                         </div>
                       ) : (
                         <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-white">

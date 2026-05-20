@@ -3,9 +3,15 @@ import Link from 'next/link'
 
 const projects = [
   {
+    id: 'fully-3d-printable-umi',
+    title: 'Fully 3D Printable UMI',
+    description: 'Fully 3D printable universal manipulation interface for hand-centric video data collection from any phone. Developed for farhand.ai.',
+    image: '/photos/umi1.JPG'
+  },
+  {
     id: 'trash-collection-robot',
     title: 'Trash Collection Robot',
-    description: 'Autonomous trash collection robot with a servo-actuated arm, designed to navigate and sort objects in a structured test arena.',
+    description: 'Arduino controlled trash collection robot with 4 DOF arm, designed to collect and dispose trash in a structured test arena.',
     image: '/photos/robotside.png'
   },
   {
