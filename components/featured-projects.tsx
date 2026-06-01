@@ -1,110 +1,106 @@
-import Image from 'next/image'
+'use client'
 import Link from 'next/link'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import type { CSSProperties } from 'react'
 
-const projects = [
-  {
-    id: 'fully-3d-printable-umi',
-    title: 'Fully 3D Printable UMI',
-    description: 'Fully 3D printable universal manipulation interface for hand-centric video data collection from any phone. Developed for farhand.ai.',
-    image: '/photos/umi1.JPG'
-  },
-  {
-    id: 'trash-collection-robot',
-    title: 'Trash Collection Robot',
-    description: 'Arduino controlled trash collection robot with 4 DOF arm, designed to collect and dispose trash in a structured test arena.',
-    image: '/photos/robotside.png'
-  },
-  {
-    id: 'inverted-pendulum',
-    title: 'Inverted Pendulum',
-    description: 'Self balancing inverted pendulum equipped with automated swing-up, and self righting functionality. Controlled via MATLAB scripts and Simulink circuits.',
-    image: '/photos/cover.jpeg'
-  },
-  {
-    id: 'robot-vaccum-circuit',
-    title: 'Robot Vaccum Circuit',
-    description: 'Arduino-based circuit integrating ultrasonic sensors, force detection, obstacle avoidance, and stepper motor control for autonomous cleaning applications.',
-    image: '/photos/circuittop.JPG'
-  },
-  {
-    id: 'electric-skateboard',
-    title: 'Electric Skateboard',
-    description: 'Remote controlled with a top speed of 20mph, powered by 4 series batteries and equipped with an interchangeable gear mount.',
-    image: '/photos/fullboard.jpg'
-  },
-  {
-    id: 'automated-chicken-coop',
-    title: 'Automated Chicken Coop',
-    description: 'Home for 12 chickens fitted with automated gravity feeders, industrial-grade water nozzles and a linearly actuated wifi-enabled gate.',
-    image: '/photos/fullcoop.jpg'
-  },
-  {
-    id: 'cnc-flat-pack-chair',
-    title: 'CNC Flat Pack Chair',
-    description: 'CNC machined from a single sheet plywood, this chair was custom designed to fit my body and is held together by friction alone.',
-    image: '/photos/fullfullchair.jpg'
-  },
-  {
-    id: 'mini-golf-robot',
-    title: 'Mini-Golf Robot',
-    description: 'Mini-Golf robot concept designed in Solidworks with a servo driven chipping and putting mechanism and the ability to climb over walls.',
-    image: '/photos/fullcad.png'
-  }
-];
+type Project = {
+  id: string
+  title: string
+  discipline: string
+  image: string
+}
+
+const projects: Project[] = [
+  { id: 'fully-3d-printable-umi', title: 'Fully 3D Printable UMI', discipline: 'Hardware Design', image: '/photos/umi1.JPG' },
+  { id: 'trash-collection-robot', title: 'Trash Collection Robot', discipline: 'Robotics & Controls', image: '/photos/robotside.png' },
+  { id: 'inverted-pendulum', title: 'Inverted Pendulum', discipline: 'Control Systems', image: '/photos/cover.jpeg' },
+  { id: 'robot-vaccum-circuit', title: 'Robot Vacuum Circuit', discipline: 'Electronics', image: '/photos/circuittop.JPG' },
+  { id: 'electric-skateboard', title: 'Electric Skateboard', discipline: 'Powertrain', image: '/photos/fullboard.jpg' },
+  { id: 'automated-chicken-coop', title: 'Automated Chicken Coop', discipline: 'Mechatronics', image: '/photos/fullcoop.jpg' },
+  { id: 'cnc-flat-pack-chair', title: 'CNC Flat Pack Chair', discipline: 'CNC Fabrication', image: '/photos/fullfullchair.jpg' },
+  { id: 'mini-golf-robot', title: 'Mini-Golf Robot', discipline: 'Mechanism Design', image: '/photos/fullcad.png' },
+]
+
+const previewStyle: Record<string, CSSProperties> = {
+  'inverted-pendulum': { objectPosition: '50% 30%' },
+  'mini-golf-robot': { objectPosition: '50% 30%' },
+  'electric-skateboard': { objectFit: 'contain', transform: 'scale(1.6) rotate(270deg)' },
+  'cnc-flat-pack-chair': { objectFit: 'contain', transform: 'scale(1.4)' },
+}
+
+const easeOut = [0.22, 1, 0.36, 1] as const
 
 export function FeaturedProjects() {
   return (
-    <section className="py-12">
-      <div className="max-w-[1400px] mx-auto px-12">
-        <h2 className="text-[32px] font-light mb-12 gradient-text">
-          Projects at a Glance
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <Link 
-              key={project.id}
-              href={`/projects/${project.id}`}
-              className="group block transition-all duration-300 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1"
-            >
-              <div className="h-full flex flex-col bg-white transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-[#eff6ff] group-hover:to-[#cffafe]">
-                <div className="relative aspect-[3/2] bg-gray-100 flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    style={{ 
-                      objectPosition: project.id === 'inverted-pendulum' ? '50% 30%' : 
-                                    project.id === 'mini-golf-robot' ? '50% 30%' :
-                                    project.id === 'electric-skateboard' ? 'center center' :
-                                    '50% 50%',
-                      objectFit: project.id === 'electric-skateboard' ? 'contain' : 
-                                project.id === 'cnc-flat-pack-chair' ? 'contain' :
-                                'cover',
-                      transform:
-                          project.id === 'electric-skateboard'
-                                  ? 'scale(1.7) rotate(270deg)'
-                                  : project.id === 'cnc-flat-pack-chair'
-                                    ? 'scale(1.5)'
-                                    : project.id === 'trash-collection-robot'
-                                      ? 'scale(1)'
-                                      : 'none',
-                              
-                    }}
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-[22px] font-light mb-2 text-gray-800 transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed font-light transition-colors duration-300">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
+    <section id="work" className="relative pt-10 md:pt-12 pb-16 md:pb-20">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+        {/* Section heading */}
+        <div className="mb-10 md:mb-12 flex items-end justify-between gap-6">
+          <div>
+            <h2 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] tracking-tight text-ink">
+              <span className="italic">Projects</span>
+            </h2>
+          </div>
         </div>
+
+        {/* Editorial project list */}
+        <ul className="border-t border-hairline">
+          {projects.map((project, idx) => {
+            const style = previewStyle[project.id] || {}
+            return (
+              <motion.li
+                key={project.id}
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.65, delay: Math.min(idx * 0.04, 0.32), ease: easeOut }}
+                className="group relative border-b border-hairline hover:z-10"
+              >
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="block focus-visible:outline-none"
+                >
+                  <div className="relative grid grid-cols-12 items-center gap-4 px-1 py-6 md:py-9 lg:py-11">
+                    {/* Number */}
+                    <span className="col-span-2 md:col-span-1 font-mono text-[11px] tracking-[0.2em] text-ink-soft transition-colors group-hover:text-signal">
+                      {(idx + 1).toString().padStart(2, '0')}
+                    </span>
+
+                    {/* Title */}
+                    <h3 className="col-span-10 md:col-span-5 font-display text-[1.65rem] md:text-[2.5rem] lg:text-[3.25rem] leading-[1.02] tracking-[-0.015em] text-ink transition-colors duration-500 group-hover:text-ink/60">
+                      {project.title}
+                    </h3>
+
+                    {/* Inline thumbnail — fills row height, enlarges on hover */}
+                    <div className="hidden md:flex md:col-span-2 justify-end translate-x-8 lg:translate-x-12">
+                      <div className="relative h-24 w-36 lg:h-32 lg:w-48 origin-center overflow-hidden rounded-xl bg-paper ring-1 ring-hairline/60 shadow-[0_10px_28px_-14px_rgba(20,15,10,0.28)] transition-all duration-500 ease-out group-hover:scale-[1.18] group-hover:z-20 group-hover:shadow-[0_28px_60px_-20px_rgba(20,15,10,0.5)]">
+                        <Image
+                          src={project.image}
+                          alt=""
+                          fill
+                          sizes="(min-width: 1024px) 192px, 144px"
+                          className="object-cover"
+                          style={style}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Discipline tag */}
+                    <span className="hidden md:block md:col-span-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-soft text-right">
+                      {project.discipline}
+                    </span>
+
+                    {/* Arrow */}
+                    <span className="hidden md:flex md:col-span-1 justify-end font-mono text-[18px] text-ink-soft transition-all group-hover:text-signal group-hover:translate-x-1">
+                      →
+                    </span>
+                  </div>
+                </Link>
+              </motion.li>
+            )
+          })}
+        </ul>
       </div>
     </section>
   )

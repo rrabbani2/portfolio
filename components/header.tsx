@@ -1,51 +1,42 @@
 'use client'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 export function Header() {
-  useEffect(() => {
-    const handleScroll = (e: Event) => {
-      e.preventDefault()
-      const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href')
-      if (href === '#contact') {
-        const contactSection = document.getElementById('contact')
-        contactSection?.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
-
-    const contactLink = document.querySelector('a[href="#contact"]')
-    contactLink?.addEventListener('click', handleScroll)
-
-    return () => {
-      contactLink?.removeEventListener('click', handleScroll)
-    }
-  }, [])
-
   return (
-    <header className="w-full py-4 px-2 bg-white shadow-sm">
-      <nav className="max-w-[1400px] mx-auto flex justify-between items-center px-4">
-        <Link href="/" className="text-[18px] tracking-wide font-light gradient-text">
-          RAZA RABBANI
+    <motion.header
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className="sticky top-0 z-40 w-full border-b border-hairline/70 bg-canvas/75 backdrop-blur-md"
+    >
+      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-12">
+        <Link href="/" className="group flex items-baseline gap-3">
+          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-soft transition-colors group-hover:text-signal">
+            ◦ R.R.
+          </span>
+          <span className="font-display text-[15px] italic tracking-tight text-ink">
+            Raza Rabbani
+          </span>
         </Link>
-        <ul className="flex space-x-8">
+        <ul className="flex items-center gap-8 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-soft">
           <li>
-            <Link href="/" className="text-[16px] text-gray-700 hover:text-blue-500 transition-colors duration-300">
+            <Link href="/" className="transition-colors hover:text-signal">
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className="text-[16px] text-gray-700 hover:text-blue-500 transition-colors duration-300">
+            <Link href="/about" className="transition-colors hover:text-signal">
               About
             </Link>
           </li>
           <li>
-            <a href="#contact" className="text-[16px] text-gray-700 hover:text-blue-500 transition-colors duration-300 cursor-pointer">
+            <a href="#contact" className="transition-colors hover:text-signal">
               Contact
             </a>
           </li>
         </ul>
       </nav>
-    </header>
+    </motion.header>
   )
 }
-

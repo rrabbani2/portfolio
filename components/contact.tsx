@@ -1,53 +1,59 @@
-import { Phone, Mail, Linkedin } from 'lucide-react'
-import Link from 'next/link'
+'use client'
+import { motion } from 'framer-motion'
 
 const contactMethods = [
-  {
-    icon: Phone,
-    title: 'Phone',
-    content: '917-656-9179',
-    href: 'tel:917-656-9179'
-  },
-  {
-    icon: Mail,
-    title: 'Email',
-    content: 'raza.rabbani2@gmail.com',
-    href: 'mailto:raza.rabbani2@gmail.com'
-  },
-  {
-    icon: Linkedin,
-    title: 'LinkedIn',
-    content: 'Connect with me',
-    href: 'https://www.linkedin.com/in/raza-rabbani-74a13a192/'
-  }
+  { label: 'Phone', value: '917 — 656 — 9179', href: 'tel:9176569179' },
+  { label: 'Email', value: 'raza.rabbani2@gmail.com', href: 'mailto:raza.rabbani2@gmail.com' },
+  { label: 'LinkedIn', value: 'in/raza-rabbani', href: 'https://www.linkedin.com/in/raza-rabbani-74a13a192/' },
 ]
+
+const easeOut = [0.22, 1, 0.36, 1] as const
 
 export function Contact() {
   return (
-    <section className="py-12">
-      <div className="max-w-[1400px] mx-auto px-12">
-        <h2 className="text-[32px] font-light mb-12 gradient-text pl-0">
-          Let's Connect
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {contactMethods.map((method) => (
-            <Link
-              key={method.title}
-              href={method.href}
-              className="group block transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
-            >
-              <div className="rounded-xl border border-gray-200 overflow-hidden transition-all duration-300 h-full flex flex-col items-center justify-center py-8 px-4 bg-white group-hover:bg-gradient-to-br group-hover:from-[#eff6ff] group-hover:to-[#cffafe]">
-                <method.icon className="w-8 h-8 mb-4 stroke-1 text-blue-500 transition-colors duration-300" />
-                <h3 className="text-[22px] font-light mb-2 text-gray-800">{method.title}</h3>
-                <p className="text-gray-600 font-light text-center">{method.content}</p>
-              </div>
-            </Link>
-          ))}
+    <section
+      id="contact"
+      className="relative border-t border-hairline py-28 md:py-36"
+    >
+      <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+        <div className="mb-14 md:mb-20 flex items-end justify-between gap-6">
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-soft">
+              03 — Contact
+            </p>
+            <h2 className="mt-4 font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] tracking-tight text-ink">
+              Let's <span className="italic">connect</span>.
+            </h2>
+          </div>
         </div>
-        {/* Reduced padding at the bottom */}
-        <div className="pb-6"></div>
+
+        <ul className="grid gap-px overflow-hidden border border-hairline bg-hairline md:grid-cols-3">
+          {contactMethods.map((m, idx) => (
+            <motion.li
+              key={m.label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: idx * 0.08, ease: easeOut }}
+              className="bg-canvas"
+            >
+              <a
+                href={m.href}
+                target={m.href.startsWith('http') ? '_blank' : undefined}
+                rel={m.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="group flex h-full min-h-[180px] flex-col justify-between gap-8 p-8 transition-colors hover:bg-paper md:p-10"
+              >
+                <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-soft">
+                  {m.label}
+                </span>
+                <span className="font-display text-2xl md:text-[1.85rem] tracking-tight text-ink leading-tight transition-colors group-hover:text-signal">
+                  {m.value}
+                </span>
+              </a>
+            </motion.li>
+          ))}
+        </ul>
       </div>
     </section>
   )
 }
-

@@ -1,32 +1,23 @@
-import Link from 'next/link'
-
 export function Footer() {
   return (
-    <footer className="w-full py-6 px-4 bg-background border-t">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Raza Rabbani. All rights reserved.
-        </p>
-        <nav className="mt-4 md:mt-0">
-          <ul className="flex space-x-4">
+    <footer className="border-t border-hairline py-10">
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between md:px-12 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-soft">
+        <p>© {new Date().getFullYear()}&nbsp;&nbsp;⋆&nbsp;&nbsp;Raza Rabbani&nbsp;&nbsp;⋆&nbsp;&nbsp;San Francisco, CA</p>
+        <nav>
+          <ul className="flex gap-6">
             <li>
-              <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary">
-                Terms of Service
-              </Link>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/raza-rabbani-74a13a192/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">
+              <a
+                href="https://www.linkedin.com/in/raza-rabbani-74a13a192/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-signal"
+              >
                 LinkedIn
               </a>
             </li>
             <li>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">
-                GitHub
+              <a href="#contact" className="transition-colors hover:text-signal">
+                Email
               </a>
             </li>
           </ul>
@@ -35,4 +26,3 @@ export function Footer() {
     </footer>
   )
 }
-

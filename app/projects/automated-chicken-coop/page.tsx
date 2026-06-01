@@ -1,164 +1,89 @@
-"use client"
+'use client'
 
-import { Header } from "../../../components/header"
-import { Footer } from "../../../components/footer"
-import Image from "next/image"
-import Link from "next/link"
-import { getNextAndPreviousProjects } from "../../../lib/projectOrder"
-import { useState } from "react"
-import { ImageModal } from "../../../components/image-modal"
+import { ProjectPageLayout } from '@/components/project-page'
 
 export default function AutomatedChickenCoopPage() {
-  const { previousProject, nextProject } = getNextAndPreviousProjects('automated-chicken-coop');
-  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
-
-  const openModal = (src: string, alt: string) => {
-    setSelectedImage({ src, alt });
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
-
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            {/* Grid container for top section */}
-            <div className="grid md:grid-cols-2 gap-12 mb-8 pt-12">
-              {/* Left side - Image */}
-              <div>
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                  <Image
-                    src="/photos/fullcoop.jpg"
-                    alt="Automated Chicken Coop"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Right side - Title and Specs */}
-              <div>
-                <h1 className="text-4xl font-light tracking-tight text-gray-800 mb-6">Automated Chicken Coop</h1>
-                <div className="blue-gradient-box">
-                  <h2 className="text-xl font-light tracking-tight mb-4 text-gray-800">Technical Specifications</h2>
-                  <dl className="space-y-2 text-sm">
-                    <div>
-                      <dt className="font-bold text-gray-700">Design: <span className="font-normal text-gray-800">TinkerCAD, Physical foundation planning</span></dt>
-                    </div>
-                    <div>
-                      <dt className="font-bold text-gray-700">Hardware: <span className="font-normal text-gray-800">Linear actuated gate, Live Wyze cameras</span></dt>
-                    </div>
-                    <div>
-                      <dt className="font-bold text-gray-700">Feeding: <span className="font-normal text-gray-800">20kg gravity-feeders, Industrial-grade water nozzles</span></dt>
-                    </div>
-                    <div>
-                      <dt className="font-bold text-gray-700">Connectivity: <span className="font-normal text-gray-800">Wi-Fi enabled, Google integration, App and voice control</span></dt>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              <div className="prose max-w-none">
-                <p className="mb-6">
-                  This chicken coop is a smart agricultural solution that combines IoT technology with sustainable design to improve poultry management. This system automates various aspects of chicken care, ensuring optimal living conditions while reducing human labor and resource consumption.
-                </p>
-                <p>
-                  Key features include gravity feeders, industrial-grade water nozzles, and a WiFi-enabled, linearly actuated gate controlled via Google integration. This project not only demonstrates the application of smart technology in agriculture but also addresses important issues in sustainable farming and animal welfare.
-                </p>
-              </div>
-
-              <div className="space-y-8">
-                <h2 className="text-2xl font-light tracking-tight mb-6">Project Gallery</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {[
-                    {
-                      src: "/photos/cad.jpg",
-                      alt: "TinkerCAD Model",
-                      description: "TinkerCAD was used to model the frame and provide an estimate for the amount of material needed for the project"
-                    },
-                    {
-                      src: "/photos/cutting.png",
-                      alt: "Frame Construction",
-                      description: "The frame of the coop was made out of pressure treated outdoor 2x4s, which were each precisely measured and cut using a handheld circular saw"
-                    },
-                    {
-                      src: "/photos/cadframe.jpg",
-                      alt: "Finalized Frame",
-                      description: "Finalized frame compared to the CAD model, which served to be extremely accurate and allowed for minimal waste"
-                    },
-                    {
-                      src: "/photos/gravityfeeder.JPG",
-                      alt: "Feeding Tube",
-                      description: "Feeding tube designed to use gravity for automatic trough replenishment. Exterior access allows for easy refilling without needing to enter the enclosure"
-                    },
-                    {
-                      src: "/photos/chickens.JPG",
-                      alt: "Completed Chicken Coop",
-                      description: "A secure and spacious new home for the chickens with room to roam, perch, and explore!"
-                    },
-                    {
-                      src: "/photos/eggs.jpg",
-                      alt: "Fresh Eggs",
-                      description: "Collecting nearly 12 eggs daily, we began selling to neighbors and sharing fresh, organic eggs as gifts"
-                    }
-                  ].map((image, index) => (
-                    <div key={index} className="space-y-4">
-                      <div 
-                        className="relative aspect-[16/9] overflow-hidden rounded-xl cursor-pointer"
-                        onClick={() => openModal(image.src, image.alt)}
-                      >
-                        <Image
-                          src={image.src}
-                          alt={image.alt}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <p className="text-sm text-gray-600">{image.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex justify-between items-center">
-          {previousProject && (
-            <Link 
-              href={`/projects/${previousProject}`}
-              className="text-[18px] text-gray-700 hover:text-blue-500 transition-colors duration-300"
-            >
-              ← Previous Project
-            </Link>
-          )}
-          {nextProject && (
-            <Link 
-              href={`/projects/${nextProject}`}
-              className="text-[18px] text-gray-700 hover:text-blue-500 transition-colors duration-300 ml-auto"
-            >
-              Next Project →
-            </Link>
-          )}
-        </div>
-      </div>
-      <Footer />
-      {selectedImage && (
-        <ImageModal
-          isOpen={!!selectedImage}
-          onClose={closeModal}
-          src={selectedImage.src}
-          alt={selectedImage.alt}
-        />
-      )}
-    </div>
+    <ProjectPageLayout
+      id="automated-chicken-coop"
+      tag="Mechatronics ⋆ IoT"
+      title="Automated Chicken"
+      titleEmphasis="Coop"
+      heroImage={{
+        src: '/photos/fullcoop.jpg',
+        alt: 'Automated Chicken Coop',
+        aspect: '4/3',
+      }}
+      heroCaption="Fig. 01 ⋆ Completed coop"
+      specs={[
+        { label: 'Design', value: 'TinkerCAD model and physical foundation planning.' },
+        { label: 'Hardware', value: 'Linear-actuated gate, live Wyze cameras.' },
+        { label: 'Feeding', value: '20 kg gravity feeders with industrial-grade water nozzles.' },
+        {
+          label: 'Connectivity',
+          value: 'Wi-Fi enabled with Google integration — app and voice control.',
+        },
+      ]}
+      prose={
+        <>
+          <p>
+            A smart agricultural solution that combines IoT technology with sustainable design to
+            improve poultry management. The system automates everyday chicken care — feeding,
+            watering, and coop access — to ensure optimal living conditions while reducing human
+            labor and resource use.
+          </p>
+          <p>
+            Key features include gravity feeders, industrial-grade water nozzles, and a Wi-Fi
+            enabled, linearly-actuated gate controlled via Google integration. The project
+            demonstrates the application of smart technology in agriculture, and addresses real
+            concerns around sustainable farming and animal welfare.
+          </p>
+        </>
+      }
+      gallery={[
+        {
+          type: 'image',
+          src: '/photos/cad.jpg',
+          alt: 'TinkerCAD Model',
+          description:
+            'TinkerCAD model used to plan the frame and estimate material needed for the project.',
+        },
+        {
+          type: 'image',
+          src: '/photos/cutting.png',
+          alt: 'Frame Construction',
+          description:
+            'Frame built from pressure-treated outdoor 2×4s, precisely measured and cut with a handheld circular saw.',
+        },
+        {
+          type: 'image',
+          src: '/photos/cadframe.jpg',
+          alt: 'Finalized Frame',
+          description:
+            'Finalized frame compared to the CAD model — extremely accurate, with minimal waste.',
+        },
+        {
+          type: 'image',
+          src: '/photos/gravityfeeder.JPG',
+          alt: 'Feeding Tube',
+          description:
+            'Gravity-driven feeding tube for automatic trough replenishment. Exterior access for easy refill.',
+        },
+        {
+          type: 'image',
+          src: '/photos/chickens.JPG',
+          alt: 'Completed Chicken Coop',
+          description:
+            'A secure, spacious home for the chickens — room to roam, perch, and explore.',
+        },
+        {
+          type: 'image',
+          src: '/photos/eggs.jpg',
+          alt: 'Fresh Eggs',
+          description:
+            'Nearly 12 eggs daily — sold to neighbors and gifted as fresh, organic eggs.',
+        },
+      ]}
+    />
   )
 }
-

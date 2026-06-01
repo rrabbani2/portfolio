@@ -1,45 +1,95 @@
-import Image from 'next/image'
+'use client'
 import Link from 'next/link'
-import type { CSSProperties } from 'react'
+import { motion } from 'framer-motion'
+
+const easeOut = [0.22, 1, 0.36, 1] as const
 
 export function Hero() {
   return (
-    <div className="py-8 pb-6 text-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-100 opacity-50 z-0"></div>
-      <div className="relative z-10 flex flex-col items-center space-y-6">
-        <div
-          className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg hero-avatar-container"
-          style={
-            {
-              "--avatar-x": "50%",
-              "--avatar-y": "30%",
-              "--avatar-shift-x": "3%", 
-              "--avatar-shift-y": "0%",
-              "--avatar-scale": "1.2",
-            } as CSSProperties
-          }
+    <section className="relative overflow-hidden">
+      {/* Top metadata strip */}
+      <div className="mx-auto flex max-w-[1400px] items-start justify-end px-6 pt-10 md:px-12 md:pt-14 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-soft">
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="text-right leading-relaxed"
         >
-          <img
-            src="/photos/headshot.png"
-            alt="Raza Rabbani"
-            className="hero-avatar-image absolute inset-0 w-full h-full object-cover"
-          />
-        </div>
-        <h1 className="text-[40px] font-light tracking-[0.02em] leading-none gradient-text">
-          RAZA RABBANI
-        </h1>
-        <p className="max-w-[800px] mx-auto px-8 sm:px-16 md:px-24 lg:px-32 text-gray-700 text-[16px] leading-relaxed font-light">
-        Welcome to my portfolio! From self-balancing systems to high-tech farms, my projects showcase the intersection of control theory, mechanical design, and practical problem-solving. This collection features both personal projects and class assignments that pushed me to blend technical expertise with creative engineering approaches. Thank you for taking the time to explore my work!
-        </p>
-        <Link 
-          href="/about"
-          className="inline-flex items-center text-[16px] text-white bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-6 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
-        >
-          More About Me →
-        </Link>
+          San Francisco, CA
+          <br />
+          <span className="opacity-70">Updated {new Date().getFullYear()}</span>
+        </motion.span>
       </div>
-    </div>
+
+      {/* Display */}
+      <div className="mx-auto max-w-[1400px] px-6 md:px-12 pt-6 md:pt-8 lg:pt-10 pb-24 md:pb-32">
+        <h1 className="font-display text-[clamp(3.5rem,12vw,12rem)] leading-[0.92] tracking-[-0.025em] text-ink">
+          <motion.span
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.95, delay: 0.3, ease: easeOut }}
+            className="block"
+          >
+            Raza
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.95, delay: 0.45, ease: easeOut }}
+            className="relative inline-block italic"
+          >
+            Rabbani<span className="not-italic text-signal">.</span>
+            {/* Hand-drawn underline */}
+            <motion.svg
+              viewBox="0 0 700 36"
+              preserveAspectRatio="none"
+              className="pointer-events-none absolute -bottom-3 left-0 h-[14px] w-full text-signal"
+              initial="hidden"
+              animate="visible"
+              aria-hidden
+            >
+              <motion.path
+                d="M 6 26 C 140 4, 280 4, 420 18 C 520 28, 600 22, 694 12"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                variants={{
+                  hidden: { pathLength: 0, opacity: 0 },
+                  visible: {
+                    pathLength: 1,
+                    opacity: 1,
+                    transition: {
+                      pathLength: { duration: 1.6, delay: 1.0, ease: [0.43, 0.13, 0.23, 0.96] },
+                      opacity: { duration: 0.3, delay: 1.0 },
+                    },
+                  },
+                }}
+              />
+            </motion.svg>
+          </motion.span>
+        </h1>
+
+        {/* Below display: intro paragraph + CTA in editorial grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.75, ease: easeOut }}
+          className="mt-16"
+        >
+          <Link
+            href="/about"
+            className="group inline-flex items-baseline gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink transition-colors hover:text-signal"
+          >
+            <span className="border-b border-current pb-1">More about me</span>
+            <span className="transition-transform group-hover:translate-x-1">→</span>
+          </Link>
+        </motion.div>
+      </div>
+
+      <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+        <div className="h-px w-full bg-hairline" />
+      </div>
+    </section>
   )
 }
-
-//final
