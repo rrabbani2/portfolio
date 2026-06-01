@@ -22,9 +22,34 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Raza Rabbani — Mechanical Engineer',
-  description: 'Selected work in robotics, controls, and mechanical design by Raza Rabbani.',
+  metadataBase: new URL('https://razarabbani.com'),
+  title: 'Raza Rabbani — Engineering Portfolio',
+  description:
+    'Portfolio of mechanical engineering, robotics, and controls work by Raza Rabbani.',
   icons: { icon: '/favicon.ico' },
+  openGraph: {
+    title: 'Raza Rabbani — Engineering Portfolio',
+    description:
+      'Portfolio of mechanical engineering, robotics, and controls work by Raza Rabbani.',
+    url: 'https://razarabbani.com',
+    siteName: 'Raza Rabbani',
+    type: 'website',
+    images: [
+      {
+        url: '/photos/headshot.png',
+        width: 1200,
+        height: 630,
+        alt: 'Raza Rabbani — Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Raza Rabbani — Engineering Portfolio',
+    description:
+      'Portfolio of mechanical engineering, robotics, and controls work by Raza Rabbani.',
+    images: ['/photos/headshot.png'],
+  },
 }
 
 export default function RootLayout({
