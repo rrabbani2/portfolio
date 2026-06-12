@@ -19,10 +19,11 @@ export function Contact() {
         <div className="mb-14 md:mb-20 flex items-end justify-between gap-6">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-soft">
-              03 — Contact
+              ◦ 02 — Contact
             </p>
             <h2 className="mt-4 font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] tracking-tight text-ink">
-              Let's <span className="italic">connect</span>.
+              Let's <span className="italic">connect</span>
+              <span className="text-signal">.</span>
             </h2>
           </div>
         </div>
@@ -43,8 +44,11 @@ export function Contact() {
                 rel={m.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="group flex h-full min-h-[180px] flex-col justify-between gap-8 p-8 transition-colors hover:bg-paper md:p-10"
               >
-                <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-soft">
+                <span className="flex items-baseline justify-between font-mono text-[10px] uppercase tracking-[0.28em] text-ink-soft">
                   {m.label}
+                  <span className="text-[13px] tracking-normal text-signal opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100">
+                    ↗
+                  </span>
                 </span>
                 <span className="font-display text-2xl md:text-[1.85rem] tracking-tight text-ink leading-tight transition-colors group-hover:text-signal">
                   {m.value}

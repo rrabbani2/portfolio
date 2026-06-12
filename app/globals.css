@@ -45,6 +45,22 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+h1, h2, h3 { text-wrap: balance; }
+
+/* Warm, thin scrollbar that belongs to the paper palette */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--hairline)) hsl(var(--canvas));
+}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: hsl(var(--canvas)); }
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--hairline));
+  border-radius: 5px;
+  border: 2px solid hsl(var(--canvas));
+}
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--ink-soft)); }
 body {
   background: hsl(var(--canvas));
   color: hsl(var(--ink));

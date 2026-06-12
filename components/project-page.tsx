@@ -8,7 +8,7 @@ import { Header } from './header'
 import { Footer } from './footer'
 import { ImageModal } from './image-modal'
 import { LazyVideo } from './lazy-video'
-import { projectOrder, getNextAndPreviousProjects } from '@/lib/projectOrder'
+import { projectOrder, projectTitles, getNextAndPreviousProjects } from '@/lib/projectOrder'
 
 const easeOut = [0.22, 1, 0.36, 1] as const
 
@@ -266,25 +266,35 @@ export function ProjectPageLayout({
 
         {/* Prev / Next */}
         <section className="border-t border-hairline">
-          <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-10 md:px-12 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-soft">
+          <div className="mx-auto grid max-w-[1400px] grid-cols-2 px-6 md:px-12">
             {previousProject ? (
               <Link
                 href={`/projects/${previousProject}`}
-                className="group flex items-center gap-3 transition-colors hover:text-signal"
+                className="group flex flex-col gap-2 border-r border-hairline py-10 pr-6"
               >
-                <span className="transition-transform group-hover:-translate-x-1">←</span>
-                <span>Previous</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-soft transition-colors group-hover:text-signal">
+                  <span className="inline-block transition-transform group-hover:-translate-x-1">←</span>{' '}
+                  Previous
+                </span>
+                <span className="font-display text-lg italic tracking-tight text-ink transition-colors group-hover:text-signal md:text-2xl">
+                  {projectTitles[previousProject] ?? 'Previous project'}
+                </span>
               </Link>
             ) : (
-              <span />
+              <span className="border-r border-hairline" />
             )}
             {nextProject ? (
               <Link
                 href={`/projects/${nextProject}`}
-                className="group flex items-center gap-3 transition-colors hover:text-signal"
+                className="group flex flex-col items-end gap-2 py-10 pl-6 text-right"
               >
-                <span>Next</span>
-                <span className="transition-transform group-hover:translate-x-1">→</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-soft transition-colors group-hover:text-signal">
+                  Next{' '}
+                  <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                </span>
+                <span className="font-display text-lg italic tracking-tight text-ink transition-colors group-hover:text-signal md:text-2xl">
+                  {projectTitles[nextProject] ?? 'Next project'}
+                </span>
               </Link>
             ) : (
               <span />

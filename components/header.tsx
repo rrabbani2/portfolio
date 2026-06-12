@@ -1,10 +1,24 @@
 'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 
+const navUnderline =
+  'relative transition-colors hover:text-signal after:absolute after:-bottom-1 after:left-0 after:h-px after:bg-signal after:transition-[width] after:duration-300'
+
 export function Header() {
+  const pathname = usePathname()
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname.startsWith(href)
+
+  const linkClass = (href: string) =>
+    `${navUnderline} ${
+      isActive(href) ? 'text-ink after:w-full' : 'after:w-0 hover:after:w-full'
+    }`
+
   return (
     <motion.header
+      id="top"
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -21,17 +35,20 @@ export function Header() {
         </Link>
         <ul className="flex items-center gap-8 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-soft">
           <li>
-            <Link href="/" className="transition-colors hover:text-signal">
+            <Link href="/" className={linkClass('/')}>
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className="transition-colors hover:text-signal">
+            <Link href="/about" className={linkClass('/about')}>
               About
             </Link>
           </li>
           <li>
-            <Link href="/#contact" className="transition-colors hover:text-signal">
+            <Link
+              href="/#contact"
+              className={`${navUnderline} after:w-0 hover:after:w-full`}
+            >
               Contact
             </Link>
           </li>

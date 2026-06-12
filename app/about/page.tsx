@@ -13,7 +13,10 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         {/* Display */}
-        <section className="mx-auto max-w-[1400px] px-6 md:px-12 pt-6 md:pt-10 pb-10 md:pb-14">
+        <section className="mx-auto max-w-[1400px] px-6 md:px-12 pt-10 md:pt-16 pb-10 md:pb-14">
+          <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.28em] text-ink-soft">
+            ◦ Profile
+          </p>
           <div className="grid gap-12 md:grid-cols-12 md:gap-16">
             <h1 className="md:col-span-5 font-display text-[clamp(2.25rem,5.5vw,5.5rem)] leading-[1] tracking-[-0.025em] text-ink whitespace-nowrap">
               <motion.span
@@ -44,16 +47,18 @@ export default function AboutPage() {
               transition={{ duration: 0.85, delay: 0.4, ease: easeOut }}
               className="md:col-span-5"
             >
-              <div className="relative aspect-square overflow-hidden rounded-full bg-paper max-w-[380px] md:ml-auto">
-                <Image
-                  src="/photos/headshot.jpg"
-                  alt="Raza Rabbani"
-                  fill
-                  priority
-                  sizes="(min-width: 768px) 380px, 90vw"
-                  className="object-cover"
-                  style={{ objectPosition: '30% 40%', transform: 'scale(1)' }}
-                />
+              <div className="relative max-w-[380px] md:ml-auto">
+                <div className="relative aspect-square overflow-hidden rounded-full bg-paper ring-1 ring-hairline shadow-[0_24px_60px_-30px_rgba(20,15,10,0.4)]">
+                  <Image
+                    src="/photos/headshot.jpg"
+                    alt="Raza Rabbani"
+                    fill
+                    priority
+                    sizes="(min-width: 768px) 380px, 90vw"
+                    className="object-cover"
+                    style={{ objectPosition: '30% 40%', transform: 'scale(1)' }}
+                  />
+                </div>
               </div>
             </motion.div>
 
