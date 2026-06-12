@@ -44,7 +44,7 @@ export type ProjectPageLayoutProps = {
     src: string
     alt: string
     style?: CSSProperties
-    aspect?: '4/5' | '5/6' | '11/10' | '4/3' | '16/10' | '1/1' | '3/4'
+    aspect?: '4/5' | '5/6' | '11/10' | '4/3' | '16/10' | '1/1' | '3/4' | '2/3'
     /** When true, the hero image matches the height of the specs column (md+) instead of using a fixed aspect ratio. */
     matchHeight?: boolean
   }
@@ -90,6 +90,8 @@ export function ProjectPageLayout({
         ? 'aspect-square'
         : heroImage.aspect === '3/4'
           ? 'aspect-[3/4]'
+          : heroImage.aspect === '2/3'
+          ? 'aspect-[2/3]'
           : 'aspect-[4/5]'
 
   return (

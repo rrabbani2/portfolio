@@ -16,9 +16,9 @@ const projects: Project[] = [
   { id: 'trash-collection-robot', title: 'Trash Collection Robot', discipline: 'Full Stack Robotics', image: '/photos/prof_photo.jpg' },
   { id: 'inverted-pendulum', title: 'Inverted Pendulum', discipline: 'Control Systems', image: '/photos/cover.jpeg' },
   { id: 'robot-vaccum-circuit', title: 'Robot Vacuum Circuit', discipline: 'Electronics', image: '/photos/circuittop.JPG' },
-  { id: 'electric-skateboard', title: 'Electric Skateboard', discipline: 'Clean Transportation', image: '/photos/fullboard.jpg' },
+  { id: 'electric-skateboard', title: 'Electric Skateboard', discipline: 'Clean Transportation', image: '/photos/fullboard.png' },
   { id: 'automated-chicken-coop', title: 'Automated Chicken Coop', discipline: 'Farming!', image: '/photos/fullcoop.jpg' },
-  { id: 'cnc-flat-pack-chair', title: 'CNC Flat Pack Chair', discipline: 'CNC Fabrication', image: '/photos/fullfullchair.jpg' },
+  { id: 'cnc-flat-pack-chair', title: 'CNC Flat Pack Chair', discipline: 'CNC Fabrication', image: '/photos/fullchair.png' },
   { id: 'mini-golf-robot', title: 'Mini-Golf Robot', discipline: 'Mechanism Design', image: '/photos/fullcad.png' },
 ]
 
@@ -26,7 +26,8 @@ const previewStyle: Record<string, CSSProperties> = {
   'fully-3d-printable-umi': { objectPosition: '50% 32%' },
   'inverted-pendulum': { objectPosition: '50% 30%' },
   'mini-golf-robot': { objectPosition: '50% 30%' },
-  'electric-skateboard': { objectFit: 'contain', transform: 'scale(1.6) rotate(270deg)' },
+  'electric-skateboard': { objectFit: 'contain', transform: 'translateY(1%) scale(1.5) rotate(270deg)' },
+  'robot-vaccum-circuit': { objectFit: 'contain', transform: 'rotate(270deg) scale(1.6)' },
 }
 
 const easeOut = [0.22, 1, 0.36, 1] as const

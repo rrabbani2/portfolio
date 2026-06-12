@@ -10,7 +10,7 @@ export default function ElectricSkateboardPage() {
       title="Electric"
       titleEmphasis="Skateboard"
       heroImage={{
-        src: '/photos/fullboard.jpg',
+        src: '/photos/fullboard.png',
         alt: 'Electric Skateboard',
         aspect: '4/3',
         matchHeight: true,

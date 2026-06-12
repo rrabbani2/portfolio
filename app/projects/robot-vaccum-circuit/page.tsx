@@ -14,7 +14,7 @@ export default function RobotVaccumCircuitPage() {
         alt: 'Robot Vacuum Circuit',
         aspect: '4/3',
         matchHeight: true,
-        style: { objectFit: 'contain', transform: 'rotate(90deg) scale(1.8)' },
+        style: { objectFit: 'contain', transform: 'rotate(270deg) scale(1.8)' },
       }}
       heroCaption="Fig. 01 ⋆ Breadboard layout"
       specs={[
