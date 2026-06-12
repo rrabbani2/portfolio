@@ -58,7 +58,7 @@ export default function CNCFlatPackChairPage() {
         },
         {
           type: 'image',
-          src: '/photos/lasercut.jpg',
+          src: '/photos/lasercut.JPG',
           alt: 'Laser Cut Models',
           description:
             'Laser-cut cardboard models used to test scale, visual appeal, and structural integrity.',
