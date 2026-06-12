@@ -44,7 +44,9 @@ export type ProjectPageLayoutProps = {
     src: string
     alt: string
     style?: CSSProperties
-    aspect?: '4/5' | '4/3' | '1/1' | '3/4'
+    aspect?: '4/5' | '5/6' | '11/10' | '4/3' | '16/10' | '1/1' | '3/4'
+    /** When true, the hero image matches the height of the specs column (md+) instead of using a fixed aspect ratio. */
+    matchHeight?: boolean
   }
   heroCaption?: string
   specs: SpecEntry[]
@@ -76,9 +78,15 @@ export function ProjectPageLayout({
   const closeModal = () => setSelectedImage(null)
 
   const heroAspectClass =
-    heroImage.aspect === '4/3'
+    heroImage.aspect === '5/6'
+      ? 'aspect-[5/6]'
+      : heroImage.aspect === '11/10'
+      ? 'aspect-[11/10]'
+      : heroImage.aspect === '4/3'
       ? 'aspect-[4/3]'
-      : heroImage.aspect === '1/1'
+      : heroImage.aspect === '16/10'
+        ? 'aspect-[16/10]'
+        : heroImage.aspect === '1/1'
         ? 'aspect-square'
         : heroImage.aspect === '3/4'
           ? 'aspect-[3/4]'
@@ -118,14 +126,20 @@ export function ProjectPageLayout({
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.3, ease: easeOut }}
-              className="md:col-span-7"
+              className={`md:col-span-7${heroImage.matchHeight ? ' md:flex md:flex-col' : ''}`}
             >
               <button
                 type="button"
                 onClick={() => openModal(heroImage.src, heroImage.alt)}
-                className="group block w-full text-left"
+                className={`group block w-full text-left${heroImage.matchHeight ? ' md:flex-1 md:min-h-0' : ''}`}
               >
-                <div className={`relative ${heroAspectClass} overflow-hidden rounded-sm bg-paper`}>
+                <div
+                  className={`relative overflow-hidden rounded-sm bg-paper ${
+                    heroImage.matchHeight
+                      ? `${heroAspectClass} md:aspect-auto md:h-full`
+                      : heroAspectClass
+                  }`}
+                >
                   <Image
                     src={heroImage.src}
                     alt={heroImage.alt}

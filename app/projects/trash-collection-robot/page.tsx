@@ -6,14 +6,14 @@ export default function TrashCollectionRobotPage() {
   return (
     <ProjectPageLayout
       id="trash-collection-robot"
-      tag="Robotics ⋆ Controls"
+      tag="Full Stack Robotics"
       title="Trash Collection"
       titleEmphasis="Robot"
       heroImage={{
-        src: '/photos/robotfull.JPG',
+        src: '/photos/prof_photo.jpg',
         alt: 'Trash Collection Robot',
-        aspect: '4/5',
-        style: { objectPosition: '50% 40%', transform: 'scale(1.1)' },
+        aspect: '16/10',
+        style: { objectPosition: '50% 50%' },
       }}
       heroCaption="Fig. 01 ⋆ Robot — full assembly"
       specs={[

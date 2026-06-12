@@ -12,8 +12,8 @@ export default function InvertedPendulumPage() {
       heroImage={{
         src: '/photos/fulltitle.png',
         alt: 'Inverted Pendulum',
-        aspect: '4/5',
-        style: { objectPosition: '50% 30%', objectFit: 'contain', transform: 'scale(1.2)' },
+        aspect: '11/10',
+        style: { objectPosition: '50% 0%' },
       }}
       heroCaption="Fig. 01 ⋆ Test rig"
       specs={[

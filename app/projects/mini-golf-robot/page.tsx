@@ -12,8 +12,8 @@ export default function MiniGolfRobotPage() {
       heroImage={{
         src: '/photos/exploded.png',
         alt: 'Mini-Golf Robot',
-        aspect: '4/5',
-        style: { objectPosition: '40% 30%' },
+        aspect: '4/3',
+        style: { objectFit: 'contain' },
       }}
       heroCaption="Fig. 01 ⋆ Exploded assembly"
       specs={[

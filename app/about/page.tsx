@@ -50,7 +50,7 @@ export default function AboutPage() {
                   alt="Raza Rabbani"
                   fill
                   className="object-cover"
-                  style={{ objectPosition: '48% 40%', transform: 'scale(1)' }}
+                  style={{ objectPosition: '30% 40%', transform: 'scale(1)' }}
                 />
               </div>
             </motion.div>

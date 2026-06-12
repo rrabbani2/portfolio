@@ -12,7 +12,8 @@ export default function Fully3DPrintableUMIPage() {
       heroImage={{
         src: '/photos/umi1.JPG',
         alt: 'Fully 3D Printable UMI',
-        aspect: '4/5',
+        aspect: '4/3',
+        style: { transform: 'scale(1.1) translateY(4%)' },
       }}
       heroCaption="Fig. 01 ⋆ Assembled UMI device"
       specs={[

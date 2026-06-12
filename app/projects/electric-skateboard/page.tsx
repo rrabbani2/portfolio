@@ -12,7 +12,9 @@ export default function ElectricSkateboardPage() {
       heroImage={{
         src: '/photos/fullboard.jpg',
         alt: 'Electric Skateboard',
-        aspect: '3/4',
+        aspect: '4/3',
+        matchHeight: true,
+        style: { objectFit: 'contain', transform: 'rotate(90deg) scale(2.2)' },
       }}
       heroCaption="Fig. 01 ⋆ Completed deck"
       specs={[

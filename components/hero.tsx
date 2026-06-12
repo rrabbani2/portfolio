@@ -24,7 +24,7 @@ export function Hero() {
       </div>
 
       {/* Display */}
-      <div className="mx-auto max-w-[1400px] px-6 md:px-12 pt-6 md:pt-8 lg:pt-10 pb-24 md:pb-32">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-12 pt-2 md:pt-2 lg:pt-3 pb-24 md:pb-32">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12">
         <h1 className="font-display text-[clamp(3.5rem,12vw,12rem)] leading-[0.92] tracking-[-0.025em] text-ink lg:flex-1">
           <motion.span
@@ -94,7 +94,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.75, ease: easeOut }}
-          className="mt-16"
+          className="mt-6"
         >
           <Link
             href="/about"

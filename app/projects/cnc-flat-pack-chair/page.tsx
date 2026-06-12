@@ -12,8 +12,8 @@ export default function CNCFlatPackChairPage() {
       heroImage={{
         src: '/photos/fullchair.jpg',
         alt: 'CNC Flat Pack Chair',
-        aspect: '1/1',
-        style: { transform: 'scale(1.55)' },
+        aspect: '4/3',
+        style: { objectFit: 'contain' },
       }}
       heroCaption="Fig. 01 ⋆ Assembled chair"
       specs={[
