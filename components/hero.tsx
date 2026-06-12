@@ -1,6 +1,8 @@
 'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { SplineScene } from '@/components/ui/splite'
+import { Card } from '@/components/ui/card'
 
 const easeOut = [0.22, 1, 0.36, 1] as const
 
@@ -23,7 +25,8 @@ export function Hero() {
 
       {/* Display */}
       <div className="mx-auto max-w-[1400px] px-6 md:px-12 pt-6 md:pt-8 lg:pt-10 pb-24 md:pb-32">
-        <h1 className="font-display text-[clamp(3.5rem,12vw,12rem)] leading-[0.92] tracking-[-0.025em] text-ink">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12">
+        <h1 className="font-display text-[clamp(3.5rem,12vw,12rem)] leading-[0.92] tracking-[-0.025em] text-ink lg:flex-1">
           <motion.span
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,6 +72,22 @@ export function Hero() {
             </motion.svg>
           </motion.span>
         </h1>
+
+          {/* Interactive 3D scene — sits to the right of the name */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.6, ease: easeOut }}
+            className="w-full shrink-0 lg:w-[500px]"
+          >
+            <Card className="relative h-[360px] w-full overflow-hidden border-transparent bg-canvas shadow-none sm:h-[460px] lg:h-[500px]">
+              <SplineScene
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                className="h-full w-full"
+              />
+            </Card>
+          </motion.div>
+        </div>
 
         {/* Below display: intro paragraph + CTA in editorial grid */}
         <motion.div
