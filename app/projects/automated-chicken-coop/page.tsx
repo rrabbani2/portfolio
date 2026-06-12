@@ -50,7 +50,7 @@ export default function AutomatedChickenCoopPage() {
         },
         {
           type: 'image',
-          src: '/photos/cutting.png',
+          src: '/photos/cutting.webp',
           alt: 'Frame Construction',
           description:
             'Frame built from pressure-treated outdoor 2×4s, precisely measured and cut with a handheld circular saw.',

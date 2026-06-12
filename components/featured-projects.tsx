@@ -16,9 +16,9 @@ const projects: Project[] = [
   { id: 'trash-collection-robot', title: 'Trash Collection Robot', discipline: 'Full Stack Robotics', image: '/photos/prof_photo.jpg' },
   { id: 'inverted-pendulum', title: 'Inverted Pendulum', discipline: 'Control Systems', image: '/photos/cover.jpeg' },
   { id: 'robot-vaccum-circuit', title: 'Robot Vacuum Circuit', discipline: 'Electronics', image: '/photos/circuittop.JPG' },
-  { id: 'electric-skateboard', title: 'Electric Skateboard', discipline: 'Clean Transportation', image: '/photos/fullboard.png' },
+  { id: 'electric-skateboard', title: 'Electric Skateboard', discipline: 'Clean Transportation', image: '/photos/fullboard.webp' },
   { id: 'automated-chicken-coop', title: 'Automated Chicken Coop', discipline: 'Farming!', image: '/photos/fullcoop.jpg' },
-  { id: 'cnc-flat-pack-chair', title: 'CNC Flat Pack Chair', discipline: 'CNC Fabrication', image: '/photos/fullchair.png' },
+  { id: 'cnc-flat-pack-chair', title: 'CNC Flat Pack Chair', discipline: 'CNC Fabrication', image: '/photos/fullchair.webp' },
   { id: 'mini-golf-robot', title: 'Mini-Golf Robot', discipline: 'Mechanism Design', image: '/photos/fullcad.png' },
 ]
 
@@ -69,9 +69,14 @@ export function FeaturedProjects() {
                     </span>
 
                     {/* Title */}
-                    <h3 className="col-span-10 md:col-span-5 font-display text-[1.65rem] md:text-[2.5rem] lg:text-[3.25rem] leading-[1.02] tracking-[-0.015em] text-ink transition-colors duration-500 group-hover:text-ink/60">
-                      {project.title}
-                    </h3>
+                    <div className="col-span-10 md:col-span-5">
+                      <h3 className="font-display text-[1.65rem] md:text-[2.5rem] lg:text-[3.25rem] leading-[1.02] tracking-[-0.015em] text-ink transition-colors duration-500 group-hover:text-ink/60">
+                        {project.title}
+                      </h3>
+                      <span className="mt-1.5 block font-mono text-[9px] uppercase tracking-[0.22em] text-ink-soft md:hidden">
+                        {project.discipline}
+                      </span>
+                    </div>
 
                     {/* Inline thumbnail — fills row height, enlarges on hover */}
                     <div className="hidden md:flex md:col-span-2 justify-end translate-x-8 lg:translate-x-12">

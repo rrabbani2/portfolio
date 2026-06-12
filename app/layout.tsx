@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Fraunces, Manrope, JetBrains_Mono } from 'next/font/google'
+import { MotionProvider } from '@/components/motion-provider'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -26,7 +27,6 @@ export const metadata: Metadata = {
   title: 'Raza Rabbani — Engineering Portfolio',
   description:
     'Portfolio of mechanical engineering, robotics, and controls work by Raza Rabbani.',
-  icons: { icon: '/favicon.ico' },
   openGraph: {
     title: 'Raza Rabbani — Engineering Portfolio',
     description:
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/photos/headshot.png',
+        url: '/photos/headshot.jpg',
         width: 1200,
         height: 630,
         alt: 'Raza Rabbani — Portfolio',
@@ -48,8 +48,12 @@ export const metadata: Metadata = {
     title: 'Raza Rabbani — Engineering Portfolio',
     description:
       'Portfolio of mechanical engineering, robotics, and controls work by Raza Rabbani.',
-    images: ['/photos/headshot.png'],
+    images: ['/photos/headshot.jpg'],
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#FAF8F3',
 }
 
 export default function RootLayout({
@@ -59,7 +63,7 @@ export default function RootLayout({
     <html lang="en" className={`${fraunces.variable} ${manrope.variable} ${jetbrains.variable}`}>
       <body className="font-sans antialiased bg-canvas text-ink">
         <div className="grain pointer-events-none fixed inset-0 z-[60] opacity-[0.04]" aria-hidden />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   )

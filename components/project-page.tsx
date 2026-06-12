@@ -7,6 +7,7 @@ import { useState, type CSSProperties, type ReactNode } from 'react'
 import { Header } from './header'
 import { Footer } from './footer'
 import { ImageModal } from './image-modal'
+import { LazyVideo } from './lazy-video'
 import { projectOrder, getNextAndPreviousProjects } from '@/lib/projectOrder'
 
 const easeOut = [0.22, 1, 0.36, 1] as const
@@ -146,6 +147,8 @@ export function ProjectPageLayout({
                     src={heroImage.src}
                     alt={heroImage.alt}
                     fill
+                    priority
+                    sizes="(min-width: 768px) 58vw, 100vw"
                     className="object-cover transition-transform duration-1000 group-hover:scale-[1.02]"
                     style={heroImage.style}
                   />
@@ -226,6 +229,7 @@ export function ProjectPageLayout({
                           src={item.src}
                           alt={item.alt}
                           fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
                           className="object-cover transition-transform duration-1000 group-hover:scale-[1.04]"
                           style={item.style}
                         />
@@ -237,14 +241,11 @@ export function ProjectPageLayout({
                         item.aspect === 'portrait' ? 'aspect-[9/16] max-w-[260px]' : 'aspect-video'
                       } overflow-hidden rounded-sm bg-ink`}
                     >
-                      <video className="h-full w-full" controls muted loop playsInline autoPlay>
-                        <source src={item.src} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
+                      <LazyVideo src={item.src} className="h-full w-full" />
                     </div>
                   ) : (
                     <div className="relative aspect-[16/10] overflow-hidden rounded-sm border border-hairline bg-paper">
-                      <iframe src={item.src} title={item.title} className="h-full w-full" />
+                      <iframe src={item.src} title={item.title} loading="lazy" className="h-full w-full" />
                     </div>
                   )}
                   {item.description && (

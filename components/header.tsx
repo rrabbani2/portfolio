@@ -31,9 +31,9 @@ export function Header() {
             </Link>
           </li>
           <li>
-            <a href="#contact" className="transition-colors hover:text-signal">
+            <Link href="/#contact" className="transition-colors hover:text-signal">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

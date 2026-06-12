@@ -1,6 +1,7 @@
 'use client'
 
 import { ProjectPageLayout, ProjectDemoSection } from '@/components/project-page'
+import { LazyVideo } from '@/components/lazy-video'
 
 export default function Fully3DPrintableUMIPage() {
   return (
@@ -10,7 +11,7 @@ export default function Fully3DPrintableUMIPage() {
       title="Fully 3D Printable"
       titleEmphasis="UMI"
       heroImage={{
-        src: '/photos/umimain.png',
+        src: '/photos/umimain.webp',
         alt: 'Fully 3D Printable UMI',
         aspect: '4/3',
       }}
@@ -56,17 +57,7 @@ export default function Fully3DPrintableUMIPage() {
       extraSection={
         <ProjectDemoSection label="Demo">
           <div className="max-w-[360px]">
-            <video
-              className="block w-full rounded-sm"
-              controls
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src="/photos/manipulation.MP4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <LazyVideo src="/photos/manipulation.MP4" className="block w-full rounded-sm" />
           </div>
         </ProjectDemoSection>
       }

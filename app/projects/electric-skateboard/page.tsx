@@ -10,7 +10,7 @@ export default function ElectricSkateboardPage() {
       title="Electric"
       titleEmphasis="Skateboard"
       heroImage={{
-        src: '/photos/fullboard.png',
+        src: '/photos/fullboard.webp',
         alt: 'Electric Skateboard',
         aspect: '4/3',
         matchHeight: true,
@@ -49,7 +49,7 @@ export default function ElectricSkateboardPage() {
         },
         {
           type: 'image',
-          src: '/photos/testing.png',
+          src: '/photos/testing.webp',
           alt: 'Wireless Test Run',
           description: 'First wireless test runs before installing the electronics under the deck.',
         },

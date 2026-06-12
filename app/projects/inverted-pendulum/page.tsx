@@ -1,6 +1,7 @@
 'use client'
 
 import { ProjectPageLayout, ProjectDemoSection } from '@/components/project-page'
+import { LazyVideo } from '@/components/lazy-video'
 
 export default function InvertedPendulumPage() {
   return (
@@ -51,10 +52,7 @@ export default function InvertedPendulumPage() {
         <ProjectDemoSection label="Demo" caption="Swing-up + balance">
           <div className="max-w-[360px]">
             <div className="relative aspect-[9/16] overflow-hidden rounded-sm bg-ink">
-              <video className="h-full w-full" controls autoPlay muted loop playsInline>
-                <source src="/photos/demo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <LazyVideo src="/photos/demo.mp4" className="h-full w-full" />
             </div>
           </div>
         </ProjectDemoSection>
@@ -62,14 +60,14 @@ export default function InvertedPendulumPage() {
       gallery={[
         {
           type: 'image',
-          src: '/photos/rotation.png',
+          src: '/photos/rotation.webp',
           alt: 'Inverted Pendulum Setup',
           description:
             'Matrix transformations and frame rotations let us track the pendulum tip relative to the base.',
         },
         {
           type: 'image',
-          src: '/photos/lagrangian.png',
+          src: '/photos/lagrangian.webp',
           alt: 'Control System Interface',
           description:
             'Applying Lagrangian dynamics (L = T − V) to the Euler-Lagrange equations of motion to simulate response.',
@@ -83,14 +81,14 @@ export default function InvertedPendulumPage() {
         },
         {
           type: 'image',
-          src: '/photos/hamiltonian.png',
+          src: '/photos/hamiltonian.webp',
           alt: 'Hamiltonian Approach Visualization',
           description:
             'Hamiltonian approach used to calculate physical parameters via input torque, mechanical power, and losses.',
         },
         {
           type: 'image',
-          src: '/photos/statespace.png',
+          src: '/photos/statespace.webp',
           alt: 'State Selector Diagram',
           description:
             'A MATLAB logic function paired with a Simulink multiport switch transitions between swing-up and balancing.',

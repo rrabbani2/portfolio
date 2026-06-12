@@ -10,7 +10,7 @@ export default function CNCFlatPackChairPage() {
       title="CNC Flat Pack"
       titleEmphasis="Chair"
       heroImage={{
-        src: '/photos/fullchair.png',
+        src: '/photos/fullchair.webp',
         alt: 'CNC Flat Pack Chair',
         aspect: '4/3',
       }}

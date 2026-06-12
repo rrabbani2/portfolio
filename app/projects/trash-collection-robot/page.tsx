@@ -58,13 +58,13 @@ export default function TrashCollectionRobotPage() {
         },
         {
           type: 'image',
-          src: '/photos/robotcollection.png',
+          src: '/photos/robotcollection.webp',
           alt: 'Trash Collection Robot collecting objects',
           description: 'Collection sequence during the test run.',
         },
         {
           type: 'image',
-          src: '/photos/robotdump.png',
+          src: '/photos/robotdump.webp',
           alt: 'Trash Collection Robot dumping mechanism',
           description: 'Dumping action at the designated drop-off zone.',
         },

@@ -46,9 +46,11 @@ export default function AboutPage() {
             >
               <div className="relative aspect-square overflow-hidden rounded-full bg-paper max-w-[380px] md:ml-auto">
                 <Image
-                  src="/photos/headshot.png"
+                  src="/photos/headshot.jpg"
                   alt="Raza Rabbani"
                   fill
+                  priority
+                  sizes="(min-width: 768px) 380px, 90vw"
                   className="object-cover"
                   style={{ objectPosition: '30% 40%', transform: 'scale(1)' }}
                 />

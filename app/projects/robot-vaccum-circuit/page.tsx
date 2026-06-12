@@ -1,6 +1,7 @@
 'use client'
 
 import { ProjectPageLayout, ProjectDemoSection } from '@/components/project-page'
+import { LazyVideo } from '@/components/lazy-video'
 
 export default function RobotVaccumCircuitPage() {
   return (
@@ -49,10 +50,7 @@ export default function RobotVaccumCircuitPage() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
             <div className="space-y-3">
               <div className="relative aspect-video overflow-hidden rounded-sm bg-ink">
-                <video className="h-full w-full" controls autoPlay muted loop playsInline>
-                  <source src="/photos/circuitsimulation.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <LazyVideo src="/photos/circuitsimulation.mp4" className="h-full w-full" />
               </div>
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-soft">
                 Fig. 02 ⋆ Circuit simulation
@@ -60,10 +58,7 @@ export default function RobotVaccumCircuitPage() {
             </div>
             <div className="space-y-3">
               <div className="relative aspect-video overflow-hidden rounded-sm bg-ink">
-                <video className="h-full w-full" controls autoPlay muted loop playsInline>
-                  <source src="/photos/circuitvideo.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <LazyVideo src="/photos/circuitvideo.mp4" className="h-full w-full" />
               </div>
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-soft">
                 Fig. 03 ⋆ Bench demonstration
