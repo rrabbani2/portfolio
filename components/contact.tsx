@@ -19,7 +19,7 @@ export function Contact() {
         <div className="mb-14 md:mb-20 flex items-end justify-between gap-6">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-soft">
-              ◦ 02 — Contact
+              ◦ Contact
             </p>
             <h2 className="mt-4 font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] tracking-tight text-ink">
               Let's <span className="italic">connect</span>
