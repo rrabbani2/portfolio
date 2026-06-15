@@ -23,7 +23,6 @@ export function Contact() {
             </p>
             <h2 className="mt-4 font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] tracking-tight text-ink">
               Let's <span className="italic">connect</span>
-              <span className="text-signal">.</span>
             </h2>
           </div>
         </div>

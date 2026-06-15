@@ -32,7 +32,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.95, delay: 0.25, ease: easeOut }}
                 className="italic"
               >
-                Me<span className="not-italic text-signal">.</span>
+                Me
               </motion.span>
             </h1>
           </div>

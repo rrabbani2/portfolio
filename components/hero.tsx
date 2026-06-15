@@ -52,7 +52,7 @@ export function Hero() {
                 transition={{ duration: 0.95, delay: 0.45, ease: easeOut }}
                 className="relative inline-block italic"
               >
-                Rabbani<span className="not-italic text-signal">.</span>
+                Rabbani
                 {/* Hand-drawn underline */}
                 <motion.svg
                   viewBox="0 0 700 36"

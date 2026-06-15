@@ -118,7 +118,6 @@ export function ProjectPageLayout({
           >
             {title}
             {titleEmphasis && <> {titleEmphasis}</>}
-            <span className="text-signal">.</span>
           </motion.h1>
         </section>
 

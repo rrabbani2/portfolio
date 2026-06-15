@@ -13,7 +13,6 @@ export default function NotFound() {
           </p>
           <h1 className="mt-4 font-display text-[clamp(2.5rem,8vw,7rem)] leading-[0.95] tracking-[-0.025em] text-ink">
             Page not <span className="italic">found</span>
-            <span className="text-signal">.</span>
           </h1>
           <Link
             href="/"
